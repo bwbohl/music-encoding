@@ -21,4 +21,4 @@ jobs:
       with:
         java-version: 1.8
     - name: Build with Ant
-      run: ant -noinput -buildfile -lib lib/saxon/saxon9he.jar build.xml
+      run: ant -noinput -lib lib/saxon/saxon9he.jar -buildfile build.xml
