@@ -8,6 +8,9 @@ name: Deploy Schema and Guidelines
 on:
   push:
     branches: [ develop ]
+  pull_request:
+    types: [opened, edited, reopened]
+    branches: [develop, stable]
 
 env:
   # schema
@@ -31,9 +34,15 @@ jobs:
       ### BUIDLING THE SCHEMA AND THE GUIDELINES ###
       - name: Checkout main repo
         uses: actions/checkout@v2
-
-      - name: Checkout submodules
-        uses: textbook/git-checkout-submodule-action@master
+        with:
+          # Whether to checkout submodules: `true` to checkout submodules or `recursive` to
+          # recursively checkout submodules.
+          #
+          # When the `ssh-key` input is not provided, SSH URLs beginning with
+          # `git@github.com:` are converted to HTTPS.
+          #
+          # Default: false
+          submodules: recursive
 
       - name: Set up JDK 1.8
         uses: actions/setup-java@v1
@@ -45,10 +54,18 @@ jobs:
         run: |
           ant -noinput -buildfile build.xml init
           ant -noinput -buildfile build.xml -lib lib/saxon/saxon9he.jar -Dgithub.sha=${{ github.sha }}
-
+  deploy:
+    runs-on: ubuntu-latest
+    needs: build
+    if: success() && 
+        contains('
+          refs/heads/develop
+          refs/heads/stable
+        ', github.ref)
+    
+    steps:
       ### PUBLISHING THE SCHEMA ###
       - name: Checkout SCHEMA_REPO into SCHEMA_DIR
-        if: github.repository_owner == 'music-encoding'
         uses: actions/checkout@v2
         with:
           # repository to check out
@@ -62,18 +79,15 @@ jobs:
           path: ${{ env.SCHEMA_DIR }}
 
       - name: Copy built schema to SCHEMA_DIR
-        if: github.repository_owner == 'music-encoding'
         run: cp -r dist/schemata/dev $SCHEMA_DIR/
 
       - name: Check git status before commit
-        if: github.repository_owner == 'music-encoding'
         working-directory: ${{ env.SCHEMA_DIR }}
         run: |
           git config --get remote.origin.url
           git status
 
       - name: Configure git
-        if: github.repository_owner == 'music-encoding'
         working-directory: ${{ env.SCHEMA_DIR }}
         run: |
           echo "Configuring git..."
@@ -81,7 +95,6 @@ jobs:
           git config user.email "github-actions@users.noreply.github.com"
 
       - name: Commit files
-        if: github.repository_owner == 'music-encoding'
         working-directory: ${{ env.SCHEMA_DIR }}
         run: |
           echo "Running git commit..."
@@ -89,13 +102,11 @@ jobs:
           git commit -m "Auto-commit of schema build for ${{ github.repository }}@${{ github.sha }}"
 
       - name: Push changes to SCHEMA
-        if: github.repository_owner == 'music-encoding'
         working-directory: ${{ env.SCHEMA_DIR }}
         run: git push origin HEAD:$SCHEMA_BRANCH
 
       ### PUBLISHING THE GUIDELINES ###
       - name: Checkout GUIDELINES_REPO into GUIDELINES_DIR
-        if: github.repository_owner == 'music-encoding'
         uses: actions/checkout@v2
         with:
           # repository to check out
@@ -109,21 +120,18 @@ jobs:
           path: ${{ env.GUIDELINES_DIR }}
 
       - name: Copy built guidelines to GUIDELINES_DIR
-        if: github.repository_owner == 'music-encoding'
         run: |
           rm -rf $GUIDELINES_DIR/dev 
           cp -r dist/guidelines/dev/web $GUIDELINES_DIR/
           mv $GUIDELINES_DIR/web $GUIDELINES_DIR/dev 
 
       - name: Check git status before commit
-        if: github.repository_owner == 'music-encoding'
         working-directory: ${{ env.GUIDELINES_DIR }}
         run: |
           git config --get remote.origin.url
           git status
 
       - name: Configure git
-        if: github.repository_owner == 'music-encoding'
         working-directory: ${{ env.GUIDELINES_DIR }}
         run: |
           echo "Configuring git..."
@@ -131,7 +139,6 @@ jobs:
           git config user.email "github-actions@users.noreply.github.com"
 
       - name: Commit files
-        if: github.repository_owner == 'music-encoding'
         working-directory: ${{ env.GUIDELINES_DIR }}
         run: |
           echo "Running git commit..."
@@ -139,6 +146,5 @@ jobs:
           git commit -m "Auto-commit of guidelines build for ${{ github.repository }}@${{ github.sha }}"
 
       - name: Push changes to GUIDELINES
-        if: github.repository_owner == 'music-encoding'
         working-directory: ${{ env.GUIDELINES_DIR }}
         run: git push origin HEAD:$GUIDELINES_BRANCH
