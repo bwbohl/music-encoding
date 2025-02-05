@@ -130,7 +130,22 @@
     <target name="echo-properties" description="Echos all ant properties.">
         <echoproperties/>
     </target>
-
+    
+    <target name="format-with-saxon.modules" depends="init-mei-classpath">
+      
+      <mkdir dir="${basedir}/build/modules"/>
+      
+      <java classname="net.sf.saxon.Transform" classpathref="mei.classpath" failonerror="true" fork="true">
+            <arg value="-s:${basedir}/source/modules"/>
+            <arg value="-xsl:${basedir}/utils/canonicalization/copy.xsl"/>
+            <arg value="-o:${basedir}/build/modules"/>
+            <arg value="-xi:off"/>
+        </java>
+      
+      <copydir src="${basedir}/build/modules" dest="${basedir}/source/modules"/>
+      
+    </target>
+    
     <target name="get-local-git-sha" description="Retrieves the local git sha.">
         <exec executable="git" outputproperty="github.sha.local">
             <arg value="describe"/>
