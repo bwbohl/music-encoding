@@ -19,9 +19,7 @@
 -->
 <?xml-model href="../validation/mei_odds.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <?xml-model href="../validation/mei_odds.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<?xml-model href="../validation/mei-purify.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<specGrp xmlns="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0"
-  xmlns:sch="http://purl.oclc.org/dsdl/schematron" xml:id="module.MEI.midi">
+<?xml-model href="../validation/mei-purify.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><specGrp xmlns="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xml:id="module.MEI.midi">
   <moduleSpec ident="MEI.midi">
     <desc xml:lang="en">MIDI component declarations.</desc>
   </moduleSpec>
@@ -61,22 +59,12 @@
     <desc xml:lang="en">Attributes which identify a MIDI instrument.</desc>
     <attList>
       <attDef ident="instr" usage="opt">
-        <desc xml:lang="en">Provides a way of pointing to a MIDI instrument definition. It must contain the ID of
-          an <gi scheme="MEI">instrDef</gi> element elsewhere in the document.</desc>
+        <desc xml:lang="en">Provides a way of pointing to a MIDI instrument definition. It must contain the ID of an <gi scheme="MEI">instrDef</gi> element elsewhere in the document.</desc>
         <datatype>
           <rng:ref name="data.URI"/>
         </datatype>
         <constraintSpec ident="check_instrTarget" scheme="schematron">
-          <constraint>
-            <sch:rule context="@instr">
-              <sch:assert role="warning" test="not(normalize-space(.) eq '')">@instr attribute
-                should have content.</sch:assert>
-              <sch:assert role="warning"
-                test="every $i in tokenize(., '\s+') satisfies substring($i,2)=//mei:instrDef/@xml:id"
-                >The value in @instr should correspond to the @xml:id attribute of an instrDef
-                element.</sch:assert>
-            </sch:rule>
-          </constraint>
+          <constraint> <sch:rule context="@instr"> <sch:assert role="warning" test="not(normalize-space(.) eq '')">@instr attribute should have content.</sch:assert> <sch:assert role="warning" test="every $i in tokenize(., '\s+') satisfies substring($i,2)=//mei:instrDef/@xml:id">The value in @instr should correspond to the @xml:id attribute of an instrDef element.</sch:assert> </sch:rule> </constraint>
         </constraintSpec>
       </attDef>
     </attList>
@@ -102,20 +90,10 @@
   <classSpec ident="att.midiInstrument" module="MEI.midi" type="atts">
     <desc xml:lang="en">Attributes that record MIDI instrument information.</desc>
     <constraintSpec ident="One_of_instrname_or_instrnum" scheme="schematron">
-      <constraint>
-        <sch:rule context="mei:*[@midi.instrname]">
-          <sch:assert test="not(@midi.instrnum)">Only one of @midi.instrname and @midi.instrnum
-            allowed.</sch:assert>
-        </sch:rule>
-      </constraint>
+      <constraint> <sch:rule context="mei:*[@midi.instrname]"> <sch:assert test="not(@midi.instrnum)">Only one of @midi.instrname and @midi.instrnum allowed.</sch:assert> </sch:rule> </constraint>
     </constraintSpec>
     <constraintSpec ident="One_of_patchname_or_patchnum" scheme="schematron">
-      <constraint>
-        <sch:rule context="mei:*[@midi.patchname]">
-          <sch:assert test="not(@midi.patchnum)">Only one of @midi.patchname and @midi.patchnum
-            allowed.</sch:assert>
-        </sch:rule>
-      </constraint>
+      <constraint> <sch:rule context="mei:*[@midi.patchname]"> <sch:assert test="not(@midi.patchnum)">Only one of @midi.patchname and @midi.patchnum allowed.</sch:assert> </sch:rule> </constraint>
     </constraintSpec>
     <attList>
       <attDef ident="midi.instrnum" usage="opt">
@@ -176,18 +154,13 @@
     <desc xml:lang="en">Attributes that record MIDI tempo information.</desc>
     <attList>
       <attDef ident="midi.bpm" usage="opt">
-        <desc xml:lang="en">Captures the number of *quarter notes* per minute. In MIDI, a beat is always defined
-          as a quarter note, *not the numerator of the time signature or the metronomic
-          indication*.</desc>
+        <desc xml:lang="en">Captures the number of *quarter notes* per minute. In MIDI, a beat is always defined as a quarter note, *not the numerator of the time signature or the metronomic indication*.</desc>
         <datatype>
           <rng:ref name="data.MIDIBPM"/>
         </datatype>
       </attDef>
       <attDef ident="midi.mspb" usage="opt">
-        <desc xml:lang="en">Records the number of microseconds per *quarter note*. In MIDI, a beat is always
-          defined as a quarter note, *not the numerator of the time signature or the metronomic
-          indication*. At 120 quarter notes per minute, each quarter note will last 500,000
-          microseconds.</desc>
+        <desc xml:lang="en">Records the number of microseconds per *quarter note*. In MIDI, a beat is always defined as a quarter note, *not the numerator of the time signature or the metronomic indication*. At 120 quarter notes per minute, each quarter note will last 500,000 microseconds.</desc>
         <datatype>
           <rng:ref name="data.MIDIMSPB"/>
         </datatype>
@@ -231,9 +204,7 @@
     <desc xml:lang="en">Attributes that record time-base information.</desc>
     <attList>
       <attDef ident="ppq" usage="opt">
-        <desc xml:lang="en">Indicates the number of pulses (sometimes referred to as ticks or divisions) per
-          quarter note. Unlike MIDI, MEI permits different values for a score and individual
-          staves.</desc>
+        <desc xml:lang="en">Indicates the number of pulses (sometimes referred to as ticks or divisions) per quarter note. Unlike MIDI, MEI permits different values for a score and individual staves.</desc>
         <datatype>
           <rng:data type="positiveInteger"/>
         </datatype>
@@ -261,8 +232,7 @@
       <empty/>
     </content>
     <remarks xml:lang="en">
-      <p>The <att>num</att> attribute specifies a MIDI parameter number, while <att>val</att>
-        contains the parameter value. Each must fall in the range 0-127.</p>
+      <p>The <att>num</att> attribute specifies a MIDI parameter number, while <att>val</att> contains the parameter value. Each must fall in the range 0-127.</p>
     </remarks>
   </elementSpec>
   <elementSpec ident="chan" module="MEI.midi">
@@ -344,9 +314,7 @@
       <empty/>
     </content>
     <remarks xml:lang="en">
-      <p>This element provides a starting or default instrument declaration for a staff, a group of
-        staves, or a layer. Following scoreDef, staffDef, layerDef, or MIDI prog elements may then
-        change the instrument as necessary.</p>
+      <p>This element provides a starting or default instrument declaration for a staff, a group of staves, or a layer. Following scoreDef, staffDef, layerDef, or MIDI prog elements may then change the instrument as necessary.</p>
     </remarks>
   </elementSpec>
   <elementSpec ident="instrGrp" module="MEI.midi">
@@ -413,8 +381,7 @@
       </rng:zeroOrMore>
     </content>
     <remarks xml:lang="en">
-      <p>The <att>label</att> attribute can be used to differentiate between multiple MIDI data
-        streams, <abbr>e.g.</abbr>, quantized/unquantized, straight/swing, ornamented/as notated, etc.</p>
+      <p>The <att>label</att> attribute can be used to differentiate between multiple MIDI data streams, <abbr>e.g.</abbr>, quantized/unquantized, straight/swing, ornamented/as notated, etc.</p>
     </remarks>
   </elementSpec>
   <elementSpec ident="noteOff" module="MEI.midi">

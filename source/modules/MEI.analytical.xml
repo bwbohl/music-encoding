@@ -19,9 +19,7 @@
 -->
 <?xml-model href="../validation/mei_odds.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <?xml-model href="../validation/mei_odds.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<?xml-model href="../validation/mei-purify.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<specGrp xmlns="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0"
-  xmlns:sch="http://purl.oclc.org/dsdl/schematron" xml:id="module.MEI.analytical">
+<?xml-model href="../validation/mei-purify.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><specGrp xmlns="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xml:id="module.MEI.analytical">
   <moduleSpec ident="MEI.analytical">
     <desc xml:lang="en">Analytical component declarations.</desc>
   </moduleSpec>
@@ -167,13 +165,10 @@
         <desc xml:lang="en">Indicates to what degree the harmonic label is supported by the notation.</desc>
         <valList type="closed">
           <valItem ident="explicit">
-            <desc xml:lang="en">The notation contains all the notes necessary for the harmonic label, <abbr>e.g.</abbr>, the
-              notes "D F♯ A" for the harmonic label "D".</desc>
+            <desc xml:lang="en">The notation contains all the notes necessary for the harmonic label, <abbr>e.g.</abbr>, the notes "D F♯ A" for the harmonic label "D".</desc>
           </valItem>
           <valItem ident="implied">
-            <desc xml:lang="en">The harmonic label relies on notes implied, but not actually present, in the
-              notation, <abbr>e.g.</abbr>, the notes "D F♯ C" for the harmonic label "D7". The note "A" is
-              missing from the notation, but can be implied.</desc>
+            <desc xml:lang="en">The harmonic label relies on notes implied, but not actually present, in the notation, <abbr>e.g.</abbr>, the notes "D F♯ C" for the harmonic label "D7". The note "A" is missing from the notation, but can be implied.</desc>
           </valItem>
         </valList>
       </attDef>
@@ -187,11 +182,7 @@
     <attList>
       <attDef ident="deg" usage="opt">
         <gloss xml:lang="en">degree</gloss>
-        <desc xml:lang="en">Captures scale degree information using <ref target="https://www.humdrum.org/rep/deg/">Humdrum **deg syntax</ref> -- an optional indicator
-          of melodic approach (^ = ascending approach, v = descending approach), a scale degree
-          value (1 = tonic ... 7 = leading tone), and an optional indication of chromatic
-          alteration, <val>1</val>, <val>v7</val>, <val>^1</val>, or <val>v5+</val>, for example. 
-          The amount of chromatic alternation is not indicated.</desc>
+        <desc xml:lang="en">Captures scale degree information using <ref target="https://www.humdrum.org/rep/deg/">Humdrum **deg syntax</ref> -- an optional indicator of melodic approach (^ = ascending approach, v = descending approach), a scale degree value (1 = tonic ... 7 = leading tone), and an optional indication of chromatic alteration, <val>1</val>, <val>v7</val>, <val>^1</val>, or <val>v5+</val>, for example. The amount of chromatic alternation is not indicated.</desc>
         <datatype>
           <rng:ref name="data.SCALEDEGREE"/>
         </datatype>
@@ -224,9 +215,7 @@
     <attList>
       <attDef ident="intm" usage="opt">
         <gloss xml:lang="en">interval melodic</gloss>
-        <desc xml:lang="en">Encodes the melodic interval from the previous pitch. The value may be a general
-          directional indication (u, d, s, etc.), an indication of diatonic interval direction,
-          quality, and size, or a precise numeric value in half steps.</desc>
+        <desc xml:lang="en">Encodes the melodic interval from the previous pitch. The value may be a general directional indication (u, d, s, etc.), an indication of diatonic interval direction, quality, and size, or a precise numeric value in half steps.</desc>
         <datatype>
           <rng:ref name="data.INTERVAL.MELODIC"/>
         </datatype>
@@ -236,13 +225,13 @@
             <measure n="1">
               <staff n="1">
                 <layer>
-                  <note dur="4" oct="4" pname="c" />
-                  <note dur="4" oct="4" pname="d" intm="u" />
-                  <note dur="4" oct="4" pname="e" intm="u" />
-                  <note dur="4" oct="4" pname="f" intm="u" />
-                  <note dur="2" oct="4" pname="g" intm="u" />
-                  <note dur="2" oct="4" pname="g" intm="s" />
-                  <note dur="4" oct="4" pname="f" intm="d" />
+                  <note dur="4" oct="4" pname="c"/>
+                  <note dur="4" oct="4" pname="d" intm="u"/>
+                  <note dur="4" oct="4" pname="e" intm="u"/>
+                  <note dur="4" oct="4" pname="f" intm="u"/>
+                  <note dur="2" oct="4" pname="g" intm="u"/>
+                  <note dur="2" oct="4" pname="g" intm="s"/>
+                  <note dur="4" oct="4" pname="f" intm="d"/>
                 </layer>
               </staff>
             </measure>
@@ -253,11 +242,11 @@
             <measure>
               <staff>
                 <layer>
-                  <note dur="4" oct="5" pname="c" />
-                  <note dur="4" oct="5" pname="d" intm="+M2" />
-                  <note dur="4" oct="5" pname="c" intm="-M2" />
-                  <note dur="4" oct="4" pname="b" intm="-m2" />
-                  <note dur="4" oct="3" pname="b" intm="-P8" />
+                  <note dur="4" oct="5" pname="c"/>
+                  <note dur="4" oct="5" pname="d" intm="+M2"/>
+                  <note dur="4" oct="5" pname="c" intm="-M2"/>
+                  <note dur="4" oct="4" pname="b" intm="-m2"/>
+                  <note dur="4" oct="3" pname="b" intm="-P8"/>
                 </layer>
               </staff>
             </measure>
@@ -268,10 +257,10 @@
             <measure>
               <staff>
                 <layer>
-                  <note dur="4" oct="4" pname="c" />
-                  <note dur="4" oct="4" pname="d" intm="2hs" />
-                  <note dur="4" oct="5" pname="d" intm="12hs" />
-                  <note dur="4" oct="5" pname="c" intm="-2.334hs" />
+                  <note dur="4" oct="4" pname="c"/>
+                  <note dur="4" oct="4" pname="d" intm="2hs"/>
+                  <note dur="4" oct="5" pname="d" intm="12hs"/>
+                  <note dur="4" oct="5" pname="c" intm="-2.334hs"/>
                 </layer>
               </staff>
             </measure>
@@ -313,12 +302,10 @@
     </attList>
   </classSpec>
   <classSpec ident="att.keySigDefault.anl" module="MEI.analytical" type="atts">
-    <desc xml:lang="en">Used by staffDef and scoreDef to provide default values for attributes in the analytical
-      domain that are related to key signatures.</desc>
+    <desc xml:lang="en">Used by staffDef and scoreDef to provide default values for attributes in the analytical domain that are related to key signatures.</desc>
     <attList>
       <attDef ident="key.accid" usage="opt">
-        <desc xml:lang="en">Contains an accidental for the tonic key, if one is required, <abbr>e.g.</abbr>, if <att>key.pname</att>
-          equals <val>c</val> and <att>key.accid</att> equals <val>s</val>, then a tonic of C# is indicated.</desc>
+        <desc xml:lang="en">Contains an accidental for the tonic key, if one is required, <abbr>e.g.</abbr>, if <att>key.pname</att> equals <val>c</val> and <att>key.accid</att> equals <val>s</val>, then a tonic of C# is indicated.</desc>
         <datatype>
           <rng:ref name="data.ACCIDENTAL.GESTURAL.basic"/>
         </datatype>
@@ -409,9 +396,7 @@
     <desc xml:lang="en">Analytical domain attributes.</desc>
   </classSpec>
   <classSpec ident="att.mSpace.anl" module="MEI.analytical" type="atts">
-    <desc xml:lang="en">Analytical domain attributes in the CMN repertoire. Use the n attribute to explicitly
-      encode this measure’s position in a string of measures containing only <gi scheme="MEI"
-      >mRest</gi> elements.</desc>
+    <desc xml:lang="en">Analytical domain attributes in the CMN repertoire. Use the n attribute to explicitly encode this measure’s position in a string of measures containing only <gi scheme="MEI">mRest</gi> elements.</desc>
     <classes>
       <memberOf key="att.fermataPresent"/>
     </classes>
@@ -558,8 +543,7 @@
     <attList>
       <attDef ident="psolfa" usage="opt">
         <gloss xml:lang="en">pitch sol-fa</gloss>
-        <desc xml:lang="en">Contains sol-fa designation, <abbr>e.g.</abbr>, do, re, mi, etc., in either a fixed or movable Do
-          system.</desc>
+        <desc xml:lang="en">Contains sol-fa designation, <abbr>e.g.</abbr>, do, re, mi, etc., in either a fixed or movable Do system.</desc>
         <datatype>
           <rng:data type="NMTOKEN"/>
         </datatype>
@@ -611,8 +595,7 @@
   <classSpec ident="att.tabGrp.anl" module="MEI.analytical" type="atts">
     <desc xml:lang="en">Analytical domain attributes.</desc>
     <classes>
-      <!-- Would that be helpful? <memberOf key="att.fermataPresent"/>-->
-    </classes>
+      <!-- Would that be helpful? <memberOf key="att.fermataPresent"/>--> </classes>
   </classSpec>
   <classSpec ident="att.tempo.anl" module="MEI.analytical" type="atts">
     <desc xml:lang="en">Analytical domain attributes.</desc>

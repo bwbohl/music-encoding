@@ -19,9 +19,7 @@
 -->
 <?xml-model href="../validation/mei_odds.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <?xml-model href="../validation/mei_odds.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<?xml-model href="../validation/mei-purify.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<specGrp xmlns="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0"
-  xmlns:sch="http://purl.oclc.org/dsdl/schematron" xml:id="module.MEI.visual">
+<?xml-model href="../validation/mei-purify.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><specGrp xmlns="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xml:id="module.MEI.visual">
   <moduleSpec ident="MEI.visual">
     <desc xml:lang="en">Visual component declarations.</desc>
   </moduleSpec>
@@ -160,9 +158,7 @@
     <attList>
       <attDef ident="len" usage="opt">
         <gloss xml:lang="en">length</gloss>
-        <desc xml:lang="en">States the length of bar lines in virtual units. The value must be greater than 0 and
-          is typically equal to 2 times (the number of staff lines - 1); <abbr>e.g.</abbr>, a value of <val>8</val> for a
-          5-line staff.</desc>
+        <desc xml:lang="en">States the length of bar lines in virtual units. The value must be greater than 0 and is typically equal to 2 times (the number of staff lines - 1); <abbr>e.g.</abbr>, a value of <val>8</val> for a 5-line staff.</desc>
         <datatype>
           <rng:data type="decimal">
             <rng:param name="minExclusive">0</rng:param>
@@ -184,11 +180,7 @@
           <rng:ref name="data.STAFFLOC"/>
         </datatype>
         <remarks xml:lang="en">
-          <p>The location may include staff lines, the spaces between the lines, and the spaces
-            directly above and below the staff. The value ranges between 0 (just below the staff) to
-            2 * number of staff lines (directly above the staff). For example, on a 5-line staff the
-            lines would be numbered 1, 3, 5, 7, and 9 while the spaces would be numbered 0, 2, 4, 6,
-            8, and 10. So, a value of <val>9</val> puts the bar line through the top line of the staff.</p>
+          <p>The location may include staff lines, the spaces between the lines, and the spaces directly above and below the staff. The value ranges between 0 (just below the staff) to 2 * number of staff lines (directly above the staff). For example, on a 5-line staff the lines would be numbered 1, 3, 5, 7, and 9 while the spaces would be numbered 0, 2, 4, 6, 8, and 10. So, a value of <val>9</val> puts the bar line through the top line of the staff.</p>
           <p>This attribute is ignored if the value of the style attribute is <val>mensur</val>.</p>
         </remarks>
       </attDef>
@@ -204,8 +196,7 @@
     </classes>
   </classSpec>
   <classSpec ident="att.beaming.vis" module="MEI.visual" type="atts">
-    <desc xml:lang="en">Used by layerDef, staffDef, and scoreDef to provide default values for attributes in the
-      visual domain related to beaming.</desc>
+    <desc xml:lang="en">Used by layerDef, staffDef, and scoreDef to provide default values for attributes in the visual domain related to beaming.</desc>
     <attList>
       <attDef ident="beam.color" usage="opt">
         <desc xml:lang="en">Color of beams, including those associated with tuplets.</desc>
@@ -254,12 +245,7 @@
     </classes>
     <attList>
       <attDef ident="slash" usage="req">
-        <desc xml:lang="en">Indicates the number of slashes required to render the appropriate beat repeat symbol.
-          When a single beat consisting of a single note or chord is repeated, the repetition symbol
-          is a single thick, slanting slash; therefore, the value <val>1</val> should be used. When the beat
-          is divided into even notes, the following values should be used: 4ths or 8ths=1, 16ths=2,
-          32nds=3, 64ths=4, 128ths=5. When the beat is comprised of mixed duration values, the
-          default rendition is 2 slashes and 2 dots.</desc>
+        <desc xml:lang="en">Indicates the number of slashes required to render the appropriate beat repeat symbol. When a single beat consisting of a single note or chord is repeated, the repetition symbol is a single thick, slanting slash; therefore, the value <val>1</val> should be used. When the beat is divided into even notes, the following values should be used: 4ths or 8ths=1, 16ths=2, 32nds=3, 64ths=4, 128ths=5. When the beat is comprised of mixed duration values, the default rendition is 2 slashes and 2 dots.</desc>
         <datatype>
           <rng:ref name="data.BEATRPT.REND"/>
         </datatype>
@@ -267,12 +253,7 @@
     </attList>
   </classSpec>
   <classSpec ident="att.bend.vis" module="MEI.visual" type="atts">
-    <desc xml:lang="en">Visual domain attributes. If the bulge or bezier attributes are present, the bend should
-      be rendered as a curve. Otherwise, it should be rendered using lines. The ho and vo attributes
-      describe the visual offset of the entire rendered bend. The endho, endvo and startho, startvo
-      attribute pairs may be used to encode start and end points relative to their programmatic
-      placement. For exact placement of the endpoints of the bend, use the x and y
-      attributes.</desc>
+    <desc xml:lang="en">Visual domain attributes. If the bulge or bezier attributes are present, the bend should be rendered as a curve. Otherwise, it should be rendered using lines. The ho and vo attributes describe the visual offset of the entire rendered bend. The endho, endvo and startho, startvo attribute pairs may be used to encode start and end points relative to their programmatic placement. For exact placement of the endpoints of the bend, use the x and y attributes.</desc>
     <classes>
       <memberOf key="att.color"/>
       <memberOf key="att.curvature"/>
@@ -335,10 +316,7 @@
     </classes>
   </classSpec>
   <classSpec ident="att.chord.vis" module="MEI.visual" type="atts">
-    <desc xml:lang="en">Visual domain attributes for chord. The slur, slur.dir, slur.rend, tie, tie.dir, and
-      tie.rend attributes here are syntactic sugar for these attributes on each of the chord's
-      individual notes. The values here apply to all the notes in the chord. If some notes are
-      slurred or tied while others aren't, then the individual note attributes must be used.</desc>
+    <desc xml:lang="en">Visual domain attributes for chord. The slur, slur.dir, slur.rend, tie, tie.dir, and tie.rend attributes here are syntactic sugar for these attributes on each of the chord's individual notes. The values here apply to all the notes in the chord. If some notes are slurred or tied while others aren't, then the individual note attributes must be used.</desc>
     <classes>
       <memberOf key="att.altSym"/>
       <memberOf key="att.color"/>
@@ -354,9 +332,7 @@
     </classes>
     <attList>
       <attDef ident="cluster" usage="opt">
-        <desc xml:lang="en">Indicates a single, alternative note head should be displayed instead of individual
-          note heads. The highest and lowest notes of the chord usually indicate the upper and lower
-          boundaries of the cluster note head.</desc>
+        <desc xml:lang="en">Indicates a single, alternative note head should be displayed instead of individual note heads. The highest and lowest notes of the chord usually indicate the upper and lower boundaries of the cluster note head.</desc>
         <datatype>
           <rng:ref name="data.CLUSTER"/>
         </datatype>
@@ -382,8 +358,7 @@
     </classes>
   </classSpec>
   <classSpec ident="att.cleffing.vis" module="MEI.visual" type="atts">
-    <desc xml:lang="en">Used by staffDef and scoreDef to provide default values for attributes in the visual
-      domain related to clefs.</desc>
+    <desc xml:lang="en">Used by staffDef and scoreDef to provide default values for attributes in the visual domain related to clefs.</desc>
     <attList>
       <attDef ident="clef.color" usage="opt">
         <desc xml:lang="en">Describes the color of the clef.</desc>
@@ -533,8 +508,7 @@
         </valList>
       </attDef>
       <attDef ident="place" usage="rec">
-        <desc xml:lang="en">Captures the placement of the episema with respect to the neume or neume component
-          with which it is associated.</desc>
+        <desc xml:lang="en">Captures the placement of the episema with respect to the neume or neume component with which it is associated.</desc>
         <datatype>
           <rng:ref name="data.EVENTREL"/>
         </datatype>
@@ -551,8 +525,7 @@
       <memberOf key="att.xy"/>
     </classes>
     <remarks xml:lang="en">
-      <p>If <att>tstamp2</att> is not provided, then the extender should be drawn based on the value
-        of <att>tstamp2</att> on the harm ancestor.</p>
+      <p>If <att>tstamp2</att> is not provided, then the extender should be drawn based on the value of <att>tstamp2</att> on the harm ancestor.</p>
     </remarks>
   </classSpec>
   <classSpec ident="att.fermata.vis" module="MEI.visual" type="atts">
@@ -570,8 +543,7 @@
     </classes>
     <attList>
       <attDef ident="form" usage="opt">
-        <desc xml:lang="en">Describes the visual appearance of the fermata; that is, whether it occurs as upright
-          or inverted.</desc>
+        <desc xml:lang="en">Describes the visual appearance of the fermata; that is, whether it occurs as upright or inverted.</desc>
         <valList type="closed">
           <valItem ident="inv">
             <desc xml:lang="en">Inverted, <abbr>i.e.</abbr>, curve or bracket below the dot.</desc>
@@ -582,8 +554,7 @@
         </valList>
       </attDef>
       <attDef ident="shape" usage="opt">
-        <desc xml:lang="en">Describes the visual appearance of the fermata; that is, whether it has a curved,
-          square, or angular shape.</desc>
+        <desc xml:lang="en">Describes the visual appearance of the fermata; that is, whether it has a curved, square, or angular shape.</desc>
         <valList type="closed">
           <valItem ident="curved">
             <desc xml:lang="en">A curve above or below the dot.</desc>
@@ -610,8 +581,7 @@
       <memberOf key="att.xy"/>
     </classes>
     <remarks xml:lang="en">
-      <p>If <att>tstamp2</att> is not provided, then the extender should be drawn based on the value
-        of <att>tstamp2</att> on a fingering ancestor.</p>
+      <p>If <att>tstamp2</att> is not provided, then the extender should be drawn based on the value of <att>tstamp2</att> on a fingering ancestor.</p>
     </remarks>
   </classSpec>
   <classSpec ident="att.fingGrp.vis" module="MEI.visual" type="atts">
@@ -657,12 +627,7 @@
           <rng:data type="nonNegativeInteger"/>
         </datatype>
         <constraintSpec ident="check_beams.floating" scheme="schematron">
-          <constraint>
-            <sch:rule context="mei:fTrem[@beams and @beams.float]">
-              <sch:assert test="@beams.float &lt;= @beams">The number of floating beams must be less
-                than or equal to the total number of beams.</sch:assert>
-            </sch:rule>
-          </constraint>
+          <constraint> <sch:rule context="mei:fTrem[@beams and @beams.float]"> <sch:assert test="@beams.float &lt;= @beams">The number of floating beams must be less than or equal to the total number of beams.</sch:assert> </sch:rule> </constraint>
         </constraintSpec>
       </attDef>
       <attDef ident="float.gap" usage="opt">
@@ -716,14 +681,7 @@
     </classes>
   </classSpec>
   <classSpec ident="att.hairpin.vis" module="MEI.visual" type="atts">
-    <desc xml:lang="en">Visual domain attributes. The startho and startvo attributes record the horizontal and
-      vertical offsets of the left end, endho and endvo record the horizontal and vertical offsets
-      of the right end, and the opening attribute records the width of the opening in staff
-      inter-line units. The x and y attributes give the absolute coordinates of the left end point,
-      and x2 and y2 the right end point, of an imaginary line that defines the length of the hairpin
-      and horizontally bifurcates it. The so-called "pitch" of hairpin may be controlled by use of
-      the startho, endho, startvo, and endvo attributes, while the placement of the entire rendered
-      mark may be controlled by use of the ho and vo attributes.</desc>
+    <desc xml:lang="en">Visual domain attributes. The startho and startvo attributes record the horizontal and vertical offsets of the left end, endho and endvo record the horizontal and vertical offsets of the right end, and the opening attribute records the width of the opening in staff inter-line units. The x and y attributes give the absolute coordinates of the left end point, and x2 and y2 the right end point, of an imaginary line that defines the length of the hairpin and horizontally bifurcates it. The so-called "pitch" of hairpin may be controlled by use of the startho, endho, startvo, and endvo attributes, while the placement of the entire rendered mark may be controlled by use of the ho and vo attributes.</desc>
     <classes>
       <memberOf key="att.color"/>
       <memberOf key="att.lineRend.base"/>
@@ -736,8 +694,7 @@
     </classes>
     <attList>
       <attDef ident="opening" usage="opt">
-        <desc xml:lang="en">Specifies the distance between the lines at the open end of a hairpin dynamic
-          mark.</desc>
+        <desc xml:lang="en">Specifies the distance between the lines at the open end of a hairpin dynamic mark.</desc>
         <datatype>
           <rng:ref name="data.MEASUREMENTUNSIGNED"/>
         </datatype>
@@ -830,8 +787,7 @@
     </classes>
     <attList>
       <attDef ident="place" usage="rec">
-        <desc xml:lang="en">Captures the placement of the tick mark with respect to the neume or neume component
-          with which it is associated.</desc>
+        <desc xml:lang="en">Captures the placement of the tick mark with respect to the neume or neume component with which it is associated.</desc>
         <datatype>
           <rng:ref name="data.EVENTREL"/>
         </datatype>
@@ -875,8 +831,7 @@
     </attList>
   </classSpec>
   <classSpec ident="att.keySigDefault.vis" module="MEI.visual" type="atts">
-    <desc xml:lang="en">Used by staffDef and scoreDef to provide default values for attributes in the visual
-      domain related to key signatures.</desc>
+    <desc xml:lang="en">Used by staffDef and scoreDef to provide default values for attributes in the visual domain related to key signatures.</desc>
     <attList>
       <attDef ident="keysig.cancelaccid" usage="opt">
         <desc xml:lang="en">Determines where cautionary accidentals should be displayed at a key change.</desc>
@@ -1016,12 +971,7 @@
     </attList>
   </classSpec>
   <classSpec ident="att.lv.vis" module="MEI.visual" type="atts">
-    <desc xml:lang="en">Visual domain attributes. The vo attribute is the vertical offset (from its normal
-      position) of the entire rendered tie. The startho, startvo, endho, and endvo attributes
-      describe the horizontal and vertical offsets of the start and end points of the sign in terms
-      of staff interline distance; that is, in units of 1/2 the distance between adjacent staff
-      lines. Startto and endto describe the start and end points in terms of time; that is,
-      beats.</desc>
+    <desc xml:lang="en">Visual domain attributes. The vo attribute is the vertical offset (from its normal position) of the entire rendered tie. The startho, startvo, endho, and endvo attributes describe the horizontal and vertical offsets of the start and end points of the sign in terms of staff interline distance; that is, in units of 1/2 the distance between adjacent staff lines. Startto and endto describe the start and end points in terms of time; that is, beats.</desc>
     <classes>
       <memberOf key="att.color"/>
       <memberOf key="att.curvature"/>
@@ -1047,8 +997,7 @@
     </classes>
   </classSpec>
   <classSpec ident="att.mensur.vis" module="MEI.visual" type="atts">
-    <desc xml:lang="en">Visual domain attributes. These attributes describe the physical appearance of the
-      mensuration sign/time signature of mensural notation.</desc>
+    <desc xml:lang="en">Visual domain attributes. These attributes describe the physical appearance of the mensuration sign/time signature of mensural notation.</desc>
     <classes>
       <memberOf key="att.altSym"/>
       <memberOf key="att.color"/>
@@ -1090,12 +1039,10 @@
     </attList>
   </classSpec>
   <classSpec ident="att.mensural.vis" module="MEI.visual" type="atts">
-    <desc xml:lang="en">Used by staffDef and scoreDef to provide default values for attributes in the visual
-      domain related to mensuration.</desc>
+    <desc xml:lang="en">Used by staffDef and scoreDef to provide default values for attributes in the visual domain related to mensuration.</desc>
     <attList>
       <attDef ident="mensur.color" usage="opt">
-        <desc xml:lang="en">Records the color of the mensuration sign. Do not confuse this with the musical term
-          'color' as used in pre-CMN notation.</desc>
+        <desc xml:lang="en">Records the color of the mensuration sign. Do not confuse this with the musical term 'color' as used in pre-CMN notation.</desc>
         <datatype>
           <rng:ref name="data.COLOR"/>
         </datatype>
@@ -1142,8 +1089,7 @@
         </datatype>
       </attDef>
       <attDef ident="mensur.slash" usage="opt">
-        <desc xml:lang="en">Indicates the number lines added to the mensuration sign. For example, one slash is
-          added for what we now call 'alla breve'.</desc>
+        <desc xml:lang="en">Indicates the number lines added to the mensuration sign. For example, one slash is added for what we now call 'alla breve'.</desc>
         <datatype>
           <rng:data type="positiveInteger"/>
         </datatype>
@@ -1178,8 +1124,7 @@
     </attList>
   </classSpec>
   <classSpec ident="att.meterSigDefault.vis" module="MEI.visual" type="atts">
-    <desc xml:lang="en">Used by staffDef and scoreDef to provide default values for attributes in the visual
-      domain related to meter signature.</desc>
+    <desc xml:lang="en">Used by staffDef and scoreDef to provide default values for attributes in the visual domain related to meter signature.</desc>
     <attList>
       <attDef ident="meter.form" usage="opt">
         <desc xml:lang="en">Contains an indication of how the meter signature should be rendered.</desc>
@@ -1188,8 +1133,7 @@
         </datatype>
       </attDef>
       <attDef ident="meter.showchange" usage="opt">
-        <desc xml:lang="en">Determines whether the old meter signature should be displayed when the meter
-          signature changes.</desc>
+        <desc xml:lang="en">Determines whether the old meter signature should be displayed when the meter signature changes.</desc>
         <datatype>
           <rng:ref name="data.BOOLEAN"/>
         </datatype>
@@ -1290,8 +1234,7 @@
     </classes>
     <attList>
       <attDef ident="block" usage="opt">
-        <desc xml:lang="en">The block attribute controls whether the multimeasure rest should be rendered as a block rest 
-          or as church rests ("Kirchenpausen"), that are combinations of longa, breve and semibreve rests.</desc>
+        <desc xml:lang="en">The block attribute controls whether the multimeasure rest should be rendered as a block rest or as church rests ("Kirchenpausen"), that are combinations of longa, breve and semibreve rests.</desc>
         <datatype>
           <rng:ref name="data.BOOLEAN"/>
         </datatype>
@@ -1422,8 +1365,7 @@
     <desc xml:lang="en">Visual domain attributes.</desc>
     <attList>
       <attDef ident="folium" usage="opt">
-        <desc xml:lang="en">States the side of a leaf (as in a manuscript) on which the content following the <gi
-          scheme="MEI">pb</gi> element occurs.</desc>
+        <desc xml:lang="en">States the side of a leaf (as in a manuscript) on which the content following the <gi scheme="MEI">pb</gi> element occurs.</desc>
         <valList type="closed">
           <valItem ident="verso">
             <desc xml:lang="en">The back of a manuscript page.</desc>
@@ -1436,10 +1378,7 @@
     </attList>
   </classSpec>
   <classSpec ident="att.pedal.vis" module="MEI.visual" type="atts">
-    <desc xml:lang="en">Visual domain attributes. The place attribute captures the placement of the pedal marking
-      with respect to the staff with which it is associated. Modern publishing standards require the
-      place to be <val>below</val>; however, for transcriptions of manuscript works, this attribute class
-      allows the full range of values.</desc>
+    <desc xml:lang="en">Visual domain attributes. The place attribute captures the placement of the pedal marking with respect to the staff with which it is associated. Modern publishing standards require the place to be <val>below</val>; however, for transcriptions of manuscript works, this attribute class allows the full range of values.</desc>
     <classes>
       <memberOf key="att.altSym"/>
       <memberOf key="att.color"/>
@@ -1589,8 +1528,7 @@
     </classes>
     <attList>
       <attDef ident="form" usage="opt">
-        <desc xml:lang="en">Indicates whether hash marks should be rendered between systems. See Read, p. 436, ex.
-          26-3.</desc>
+        <desc xml:lang="en">Indicates whether hash marks should be rendered between systems. See Read, p. 436, ex. 26-3.</desc>
         <valList type="closed">
           <valItem ident="hash">
             <desc xml:lang="en">Display hash marks between systems.</desc>
@@ -1628,9 +1566,7 @@
     </classes>
     <attList>
       <attDef ident="vu.height" usage="opt">
-        <desc xml:lang="en">Defines the height of a "virtual unit" (vu) in terms of real-world units. A single vu
-          is half the distance between adjacent staff lines where the interline space is measured 
-          from the middle of a staff line.</desc>
+        <desc xml:lang="en">Defines the height of a "virtual unit" (vu) in terms of real-world units. A single vu is half the distance between adjacent staff lines where the interline space is measured from the middle of a staff line.</desc>
         <datatype>
           <rng:data type="token">
             <!-- px and vu are *not* allowed here because they're not real-world units -->
@@ -1666,8 +1602,7 @@
     </classes>
     <attList>
       <attDef ident="place" usage="rec">
-        <desc xml:lang="en">Captures the placement of the sequence of characters with respect to the neume or
-          neume component with which it is associated.</desc>
+        <desc xml:lang="en">Captures the placement of the sequence of characters with respect to the neume or neume component with which it is associated.</desc>
         <datatype>
           <rng:ref name="data.EVENTREL"/>
         </datatype>
@@ -1675,8 +1610,7 @@
     </attList>
   </classSpec>
   <classSpec ident="att.slur.vis" module="MEI.visual" type="atts">
-    <desc xml:lang="en">Visual domain attributes for slur. The vo attribute is the vertical offset (from its
-      normal position) of the entire rendered slur/phrase mark.</desc>
+    <desc xml:lang="en">Visual domain attributes for slur. The vo attribute is the vertical offset (from its normal position) of the entire rendered slur/phrase mark.</desc>
     <classes>
       <memberOf key="att.color"/>
       <memberOf key="att.curvature"/>
@@ -1704,8 +1638,7 @@
     </classes>
     <attList>
       <attDef ident="compressable" usage="opt">
-        <desc xml:lang="en">Indicates whether a space is 'compressible', <abbr>i.e.</abbr>, if it may be removed at the
-          discretion of processing software.</desc>
+        <desc xml:lang="en">Indicates whether a space is 'compressible', <abbr>i.e.</abbr>, if it may be removed at the discretion of processing software.</desc>
         <datatype>
           <rng:ref name="data.BOOLEAN"/>
         </datatype>
@@ -1752,9 +1685,7 @@
           <rng:ref name="data.COLOR"/>
         </datatype>
         <remarks xml:lang="en">
-          <p>The value is structured; that is, it should contain a single color value or have
-            the same number of space-separated values as the number of lines indicated by the
-            lines attribute. The first value then applies to the lowest line of the staff.</p>
+          <p>The value is structured; that is, it should contain a single color value or have the same number of space-separated values as the number of lines indicated by the lines attribute. The first value then applies to the lowest line of the staff.</p>
           <p>All values from data.COLOR are allowed.</p>
         </remarks>
       </attDef>
@@ -1765,10 +1696,7 @@
         </datatype>
       </attDef>
       <attDef ident="spacing" usage="opt">
-        <desc xml:lang="en">Records the absolute distance (as opposed to the relative distances recorded in <gi
-          scheme="MEI">scoreDef</gi> elements) between this staff and the preceding one in the same
-          system. This value is meaningless for the first staff in a system since the spacing.system
-          attribute indicates the spacing between systems.</desc>
+        <desc xml:lang="en">Records the absolute distance (as opposed to the relative distances recorded in <gi scheme="MEI">scoreDef</gi> elements) between this staff and the preceding one in the same system. This value is meaningless for the first staff in a system since the spacing.system attribute indicates the spacing between systems.</desc>
         <datatype>
           <rng:ref name="data.MEASUREMENTSIGNED"/>
         </datatype>
@@ -1785,14 +1713,12 @@
     <attList>
       <attDef ident="bar.thru" usage="opt">
         <gloss xml:lang="en">bar lines through</gloss>
-        <desc xml:lang="en">Indicates whether bar lines go across the space between staves (true) or are only
-          drawn across the lines of each staff (false).</desc>
+        <desc xml:lang="en">Indicates whether bar lines go across the space between staves (true) or are only drawn across the lines of each staff (false).</desc>
         <datatype>
           <rng:ref name="data.BOOLEAN"/>
         </datatype>
         <remarks xml:lang="en">
-          <p>This attribute is ignored when the <att>bar.method</att> attribute’s value is <val>mensur</val> 
-            or <val>takt</val>.</p>
+          <p>This attribute is ignored when the <att>bar.method</att> attribute’s value is <val>mensur</val> or <val>takt</val>.</p>
         </remarks>
       </attDef>
     </attList>
@@ -1945,12 +1871,7 @@
     </classes>
   </classSpec>
   <classSpec ident="att.tie.vis" module="MEI.visual" type="atts">
-    <desc xml:lang="en">Visual domain attributes. The vo attribute is the vertical offset (from its normal
-      position) of the entire rendered tie. The startho, startvo, endho, and endvo attributes
-      describe the horizontal and vertical offsets of the start and end points of the tie in terms
-      of staff interline distance; that is, in units of 1/2 the distance between adjacent staff
-      lines. Startto and endto describe the start and end points in terms of time; that is,
-      beats.</desc>
+    <desc xml:lang="en">Visual domain attributes. The vo attribute is the vertical offset (from its normal position) of the entire rendered tie. The startho, startvo, endho, and endvo attributes describe the horizontal and vertical offsets of the start and end points of the tie in terms of staff interline distance; that is, in units of 1/2 the distance between adjacent staff lines. Startto and endto describe the start and end points in terms of time; that is, beats.</desc>
     <classes>
       <memberOf key="att.color"/>
       <memberOf key="att.curvature"/>
@@ -1989,8 +1910,7 @@
     </classes>
     <attList>
       <attDef ident="bracket.place" usage="opt">
-        <desc xml:lang="en">Used to state where a tuplet bracket will be placed in relation to the note
-          heads.</desc>
+        <desc xml:lang="en">Used to state where a tuplet bracket will be placed in relation to the note heads.</desc>
         <datatype>
           <rng:ref name="data.STAFFREL.basic"/>
         </datatype>

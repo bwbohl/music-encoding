@@ -19,9 +19,7 @@
 -->
 <?xml-model href="../validation/mei_odds.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <?xml-model href="../validation/mei_odds.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<?xml-model href="../validation/mei-purify.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<specGrp xmlns="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0"
-  xmlns:sch="http://purl.oclc.org/dsdl/schematron" xml:id="module.MEI.mensural">
+<?xml-model href="../validation/mei-purify.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><specGrp xmlns="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xml:id="module.MEI.mensural">
   <moduleSpec ident="MEI.mensural">
     <desc xml:lang="en">Mensural repertoire component declarations.</desc>
   </moduleSpec>
@@ -128,10 +126,9 @@
       </valList>
     </content>
     <remarks xml:lang="en">
-        <p>
-            <!-- TODO: Add samples for all values here  -->
-            <!--<graphic url="ExampleImages/accid-20100510.png" height="50%" width="50%"/>-->
-        </p>
+      <p>
+        <!-- TODO: Add samples for all values here  -->
+        <!--<graphic url="ExampleImages/accid-20100510.png" height="50%" width="50%"/>--> </p>
     </remarks>
   </macroSpec>
   <macroSpec ident="data.FLAGPOS.mensural" module="MEI.mensural" type="dt">
@@ -182,22 +179,10 @@
   <classSpec ident="att.duration.quality" module="MEI.mensural" type="atts">
     <desc xml:lang="en">Attribute that expresses duration for a given mensural note symbol.</desc>
     <constraintSpec ident="check_duplex_quality" scheme="schematron">
-      <constraint>
-        <sch:rule context="(mei:note|mei:space)[@dur.quality='duplex']">
-          <sch:assert test="@dur='longa'">
-            Duplex quality can only be used with longas (in Ars antiqua).
-          </sch:assert>
-        </sch:rule>
-      </constraint>
+      <constraint> <sch:rule context="(mei:note|mei:space)[@dur.quality='duplex']"> <sch:assert test="@dur='longa'"> Duplex quality can only be used with longas (in Ars antiqua). </sch:assert> </sch:rule> </constraint>
     </constraintSpec>
     <constraintSpec ident="check_maiorminor_quality" scheme="schematron">
-      <constraint>
-        <sch:rule context="(mei:note|mei:space)[@dur.quality='maior' or @dur.quality='minor']">
-          <sch:assert test="@dur='semibrevis'">
-            Maior / minor quality can only be used with semibreves (in Ars antiqua).
-          </sch:assert>
-        </sch:rule>
-      </constraint>
+      <constraint> <sch:rule context="(mei:note|mei:space)[@dur.quality='maior' or @dur.quality='minor']"> <sch:assert test="@dur='semibrevis'"> Maior / minor quality can only be used with semibreves (in Ars antiqua). </sch:assert> </sch:rule> </constraint>
     </constraintSpec>
     <attList>
       <attDef ident="dur.quality" usage="rec">
@@ -212,28 +197,19 @@
     <desc xml:lang="en">Logical domain attributes.</desc>
   </classSpec>
   <classSpec ident="att.mensural.log" module="MEI.mensural" type="atts">
-    <desc xml:lang="en">Used by staffDef and scoreDef to provide default values for attributes in the logical
-      domain related to mensuration. The tempus, prolatio, modusmaior, and modusminor attributes
-      (from the att.mensural.shared class) specify the relationship between the four principle
-      levels of note value, <abbr>i.e.</abbr>, the long, breve, semibreve and minim, in mensural notation.
-      Modusminor describes the long-breve relationship, while tempus describes the breve-semibreve,
-      and prolatio the semibreve-minim relationship, respectively. Modusmaior is for the maxima-long
-      relationship. The proport.* attributes describe augmentation or diminution of the normal value
-      of the notes in mensural notation.</desc>
+    <desc xml:lang="en">Used by staffDef and scoreDef to provide default values for attributes in the logical domain related to mensuration. The tempus, prolatio, modusmaior, and modusminor attributes (from the att.mensural.shared class) specify the relationship between the four principle levels of note value, <abbr>i.e.</abbr>, the long, breve, semibreve and minim, in mensural notation. Modusminor describes the long-breve relationship, while tempus describes the breve-semibreve, and prolatio the semibreve-minim relationship, respectively. Modusmaior is for the maxima-long relationship. The proport.* attributes describe augmentation or diminution of the normal value of the notes in mensural notation.</desc>
     <classes>
       <memberOf key="att.mensural.shared"/>
     </classes>
     <attList>
       <attDef ident="proport.num" usage="opt">
-        <desc xml:lang="en">Together, proport.num and proport.numbase specify a proportional change as a ratio,
-          <abbr>e.g.</abbr>, 1:3. Proport.num is for the first value in the ratio.</desc>
+        <desc xml:lang="en">Together, proport.num and proport.numbase specify a proportional change as a ratio, <abbr>e.g.</abbr>, 1:3. Proport.num is for the first value in the ratio.</desc>
         <datatype>
           <rng:data type="positiveInteger"/>
         </datatype>
       </attDef>
       <attDef ident="proport.numbase" usage="opt">
-        <desc xml:lang="en">Together, proport.num and proport.numbase specify a proportional change as a ratio,
-          <abbr>e.g.</abbr>, 1:3. Proport.numbase is for the second value in the ratio.</desc>
+        <desc xml:lang="en">Together, proport.num and proport.numbase specify a proportional change as a ratio, <abbr>e.g.</abbr>, 1:3. Proport.numbase is for the second value in the ratio.</desc>
         <datatype>
           <rng:data type="positiveInteger"/>
         </datatype>
@@ -243,13 +219,7 @@
   <classSpec ident="att.mensural.shared" module="MEI.mensural" type="atts">
     <desc xml:lang="en">Shared attributes in the mensural repertoire.</desc>
     <constraintSpec ident="mensuration_conflicting_attributes" scheme="schematron">
-      <constraint>
-        <sch:rule context="mei:mensur[@divisio]">
-          <sch:assert test="not(@tempus) and not(@prolatio)">
-            When the @divisio attribute is used, the @tempus and @prolatio attributes are not allowed.
-          </sch:assert>
-        </sch:rule>
-      </constraint>
+      <constraint> <sch:rule context="mei:mensur[@divisio]"> <sch:assert test="not(@tempus) and not(@prolatio)"> When the @divisio attribute is used, the @tempus and @prolatio attributes are not allowed. </sch:assert> </sch:rule> </constraint>
     </constraintSpec>
     <attList>
       <attDef ident="modusmaior" usage="opt">
@@ -311,8 +281,7 @@
     <desc xml:lang="en">Logical domain attributes that describe the properties of a plica in the mensural repertoire.</desc>
   </classSpec>
   <classSpec ident="att.proport.log" module="MEI.mensural" type="atts">
-    <desc xml:lang="en">Logical domain attributes. These attributes describe augmentation or diminution of the
-      normal value of the notes in mensural notation as a ratio.</desc>
+    <desc xml:lang="en">Logical domain attributes. These attributes describe augmentation or diminution of the normal value of the notes in mensural notation as a ratio.</desc>
     <classes>
       <memberOf key="att.duration.ratio"/>
     </classes>
@@ -335,9 +304,7 @@
     </attList>
   </classSpec>
   <classSpec ident="att.scoreDef.log.mensural" module="MEI.mensural" type="atts">
-    <desc xml:lang="en">Logical domain attributes for a score in the mensural repertoire. The values set in these
-      attributes act as score-wide defaults for attributes that are not set in descendant
-      elements.</desc>
+    <desc xml:lang="en">Logical domain attributes for a score in the mensural repertoire. The values set in these attributes act as score-wide defaults for attributes that are not set in descendant elements.</desc>
     <classes>
       <memberOf key="att.mensural.log"/>
     </classes>
@@ -364,15 +331,15 @@
     <desc xml:lang="en">Logical domain attributes that describe the properties of a stem in the mensural repertoire.</desc>
   </classSpec>
   <classSpec ident="att.stems.mensural" module="MEI.mensural" type="atts">
-      <desc xml:lang="en">Attributes that describe the properties of stemmed features specific to mensural repertoires.</desc>
-      <attList>
-          <attDef ident="stem.form" usage="opt">
-              <desc xml:lang="en">Records the form of the stem.</desc>
-              <datatype maxOccurs="1" minOccurs="1">
-                  <rng:ref name="data.STEMFORM.mensural"/>
-              </datatype>
-          </attDef>
-      </attList>
+    <desc xml:lang="en">Attributes that describe the properties of stemmed features specific to mensural repertoires.</desc>
+    <attList>
+      <attDef ident="stem.form" usage="opt">
+        <desc xml:lang="en">Records the form of the stem.</desc>
+        <datatype maxOccurs="1" minOccurs="1">
+          <rng:ref name="data.STEMFORM.mensural"/>
+        </datatype>
+      </attDef>
+    </attList>
   </classSpec>
   <classSpec ident="model.eventLike.mensural" module="MEI.mensural" type="model">
     <desc xml:lang="en">Groups event elements that occur in the mensural repertoire.</desc>
@@ -381,8 +348,7 @@
     </classes>
   </classSpec>
   <classSpec ident="model.layerPart.mensural" module="MEI.mensural" type="model">
-    <desc xml:lang="en">Groups notated events that may appear at the layer level in the mensural
-      repertoire.</desc>
+    <desc xml:lang="en">Groups notated events that may appear at the layer level in the mensural repertoire.</desc>
     <classes>
       <memberOf key="model.layerPart.mensuralAndNeumes"/>
     </classes>
@@ -432,18 +398,12 @@
       </rng:zeroOrMore>
     </content>
     <remarks xml:lang="en">
-      <p>The rhythmic meaning of the components of a ligature is typically contextual, not absolute;
-        therefore, an interpretative duration may be encoded on each of the components using either
-        the <att>dur.ges</att> attribute or the <att>num</att> and <att>numbase</att> attribute
-        pair. The <gi scheme="MEI">ligature</gi> element should <hi rend="bold">not</hi> be used for
-        brackets in modern notation that indicate notes that were part of a ligature in the original
-        source.</p>
+      <p>The rhythmic meaning of the components of a ligature is typically contextual, not absolute; therefore, an interpretative duration may be encoded on each of the components using either the <att>dur.ges</att> attribute or the <att>num</att> and <att>numbase</att> attribute pair. The <gi scheme="MEI">ligature</gi> element should <hi rend="bold">not</hi> be used for brackets in modern notation that indicate notes that were part of a ligature in the original source.</p>
     </remarks>
   </elementSpec>
   <elementSpec ident="mensur" module="MEI.mensural">
     <gloss xml:lang="en">mensuration</gloss>
-    <desc xml:lang="en">Collects information about the metrical relationship between a note value
-      and the next smaller value; that is, either triple or duple.</desc>
+    <desc xml:lang="en">Collects information about the metrical relationship between a note value and the next smaller value; that is, either triple or duple.</desc>
     <classes>
       <memberOf key="att.common"/>
       <memberOf key="att.facsimile"/>
@@ -458,9 +418,7 @@
       <empty/>
     </content>
     <remarks xml:lang="en">
-      <p>The <gi scheme="MEI">mensur</gi> element is provided for the encoding of mensural notation.
-        The <att>slash</att> attribute indicates the number lines added to the mensuration sign. For
-        example, one slash is added for what we now call 'alla breve'.</p>
+      <p>The <gi scheme="MEI">mensur</gi> element is provided for the encoding of mensural notation. The <att>slash</att> attribute indicates the number lines added to the mensuration sign. For example, one slash is added for what we now call 'alla breve'.</p>
     </remarks>
   </elementSpec>
   <elementSpec ident="plica" module="MEI.mensural">
@@ -474,11 +432,7 @@
       <memberOf key="att.plica.anl"/>
     </classes>
     <constraintSpec ident="Check_plica" scheme="schematron">
-      <constraint>
-        <sch:rule context="mei:plica">
-          <sch:assert test="count(../mei:plica) &lt;= 1">Only one plica is allowed.</sch:assert>
-        </sch:rule>
-      </constraint>
+      <constraint> <sch:rule context="mei:plica"> <sch:assert test="count(../mei:plica) &lt;= 1">Only one plica is allowed.</sch:assert> </sch:rule> </constraint>
     </constraintSpec>
   </elementSpec>
   <elementSpec ident="proport" module="MEI.mensural">
@@ -498,10 +452,7 @@
       <empty/>
     </content>
     <remarks xml:lang="en">
-      <p>The proport element is provided for the encoding of mensural notation. It allows the
-        description of note durations as arithmetic ratios. While mensuration refers to the normal
-        relationships between note durations, proportion affects the relations of the note durations
-        to the tactus.</p>
+      <p>The proport element is provided for the encoding of mensural notation. It allows the description of note durations as arithmetic ratios. While mensuration refers to the normal relationships between note durations, proportion affects the relations of the note durations to the tactus.</p>
     </remarks>
   </elementSpec>
   <elementSpec ident="stem" module="MEI.mensural">
@@ -518,18 +469,10 @@
       <empty/>
     </content>
     <constraintSpec ident="Check_stem" scheme="schematron">
-      <constraint>
-        <sch:rule context="mei:stem">
-          <sch:assert test="not(ancestor::mei:note/@*[starts-with(local-name(),'stem.')])">A note with nested stem elements must not have @stem.* attributes.</sch:assert>
-        </sch:rule>
-      </constraint>
+      <constraint> <sch:rule context="mei:stem"> <sch:assert test="not(ancestor::mei:note/@*[starts-with(local-name(),'stem.')])">A note with nested stem elements must not have @stem.* attributes.</sch:assert> </sch:rule> </constraint>
     </constraintSpec>
     <remarks xml:lang="en">
-      <p>Mensural notes can have multiple stems and these may have various forms, directions, and types of flags.
-        Multiple stem elements can be encoded as children of a single note. The attributes <att>pos</att>,
-        <att>length</att>, <att>form</att>, and <att>dir</att> allow to encode different positions, lengths,
-        forms, and directions for each these stems. The attributes <att>flag.pos</att> and <att>flag.form</att> 
-        also allow to encode different types of flags for each of the stems.</p>
+      <p>Mensural notes can have multiple stems and these may have various forms, directions, and types of flags. Multiple stem elements can be encoded as children of a single note. The attributes <att>pos</att>, <att>length</att>, <att>form</att>, and <att>dir</att> allow to encode different positions, lengths, forms, and directions for each these stems. The attributes <att>flag.pos</att> and <att>flag.form</att> also allow to encode different types of flags for each of the stems.</p>
     </remarks>
   </elementSpec>
 </specGrp>

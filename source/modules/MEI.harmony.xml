@@ -19,9 +19,7 @@
 -->
 <?xml-model href="../validation/mei_odds.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <?xml-model href="../validation/mei_odds.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<?xml-model href="../validation/mei-purify.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<specGrp xmlns="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0"
-  xmlns:sch="http://purl.oclc.org/dsdl/schematron" xml:id="module.MEI.harmony">
+<?xml-model href="../validation/mei-purify.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><specGrp xmlns="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xml:id="module.MEI.harmony">
   <moduleSpec ident="MEI.harmony">
     <desc xml:lang="en">Harmony component declarations.</desc>
   </moduleSpec>
@@ -58,22 +56,12 @@
     <attList>
       <attDef ident="chordref" usage="opt">
         <gloss xml:lang="en">chord reference</gloss>
-        <desc xml:lang="en">Contains a reference to a <gi scheme="MEI">chordDef</gi> element elsewhere in the
-          document.</desc>
+        <desc xml:lang="en">Contains a reference to a <gi scheme="MEI">chordDef</gi> element elsewhere in the document.</desc>
         <datatype>
           <rng:ref name="data.URI"/>
         </datatype>
         <constraintSpec ident="check_chordrefTarget" scheme="schematron">
-          <constraint>
-            <sch:rule context="@chordref">
-              <sch:assert role="warning" test="not(normalize-space(.) eq '')">@chordref attribute
-                should have content.</sch:assert>
-              <sch:assert role="warning"
-                test="every $i in tokenize(., '\s+') satisfies substring($i,2)=//mei:chordDef/@xml:id"
-                >The value in @chordref should correspond to the @xml:id attribute of a chordDef
-                element.</sch:assert>
-            </sch:rule>
-          </constraint>
+          <constraint> <sch:rule context="@chordref"> <sch:assert role="warning" test="not(normalize-space(.) eq '')">@chordref attribute should have content.</sch:assert> <sch:assert role="warning" test="every $i in tokenize(., '\s+') satisfies substring($i,2)=//mei:chordDef/@xml:id">The value in @chordref should correspond to the @xml:id attribute of a chordDef element.</sch:assert> </sch:rule> </constraint>
         </constraintSpec>
       </attDef>
     </attList>
@@ -82,8 +70,7 @@
     <desc xml:lang="en">Groups elements that group playable chord definitions.</desc>
   </classSpec>
   <classSpec ident="model.controlEventLike.harmony" module="MEI.harmony" type="model">
-    <desc xml:lang="en">Groups harmonic elements that function as control events; that is, those events that
-      modify or otherwise depend on the existence of notated events.</desc>
+    <desc xml:lang="en">Groups harmonic elements that function as control events; that is, those events that modify or otherwise depend on the existence of notated events.</desc>
     <classes>
       <memberOf key="model.controlEventLike"/>
     </classes>
@@ -119,12 +106,7 @@
       </rng:zeroOrMore>
     </content>
     <remarks xml:lang="en">
-      <p>An <att>xml:id</att> attribute, while not required by the schema, is needed so that <gi
-        scheme="MEI">harm</gi> elements can reference a particular chord definition. The
-        <att>pos</att> (position) attribute is provided in order to create displayable chord
-        tablature grids. <gi scheme="MEI">chordMember</gi> sub-elements record the individual
-        pitches of the chord. <gi scheme="MEI">barre</gi> sub-elements may be used when a single
-        finger is used to stop multiple strings.</p>
+      <p>An <att>xml:id</att> attribute, while not required by the schema, is needed so that <gi scheme="MEI">harm</gi> elements can reference a particular chord definition. The <att>pos</att> (position) attribute is provided in order to create displayable chord tablature grids. <gi scheme="MEI">chordMember</gi> sub-elements record the individual pitches of the chord. <gi scheme="MEI">barre</gi> sub-elements may be used when a single finger is used to stop multiple strings.</p>
     </remarks>
   </elementSpec>
   <elementSpec ident="chordMember" module="MEI.harmony">
@@ -140,11 +122,7 @@
       <empty/>
     </content>
     <remarks xml:lang="en">
-      <p>The <att>string</att>, <att>fret</att>, and <att>fing</att> attributes are provided in
-        order to create displayable chord tablature grids. The <att>inth</att> (harmonic interval)
-        attribute may be used to facilitate automated performance of a chord. It gives the number of
-        diatonic steps above the bass. Of course, for the bass note itself, <att>inth</att> should be set
-        to <val>P1</val>.</p>
+      <p>The <att>string</att>, <att>fret</att>, and <att>fing</att> attributes are provided in order to create displayable chord tablature grids. The <att>inth</att> (harmonic interval) attribute may be used to facilitate automated performance of a chord. It gives the number of diatonic steps above the bass. Of course, for the bass note itself, <att>inth</att> should be set to <val>P1</val>.</p>
     </remarks>
   </elementSpec>
   <elementSpec ident="chordTable" module="MEI.harmony">
@@ -159,8 +137,7 @@
       </rng:oneOrMore>
     </content>
     <remarks xml:lang="en">
-      <p>A chordTable may be shared between MEI instances through the use of an external parsed
-        entity containing the look-up table to be shared.</p>
+      <p>A chordTable may be shared between MEI instances through the use of an external parsed entity containing the look-up table to be shared.</p>
     </remarks>
   </elementSpec>
   <elementSpec ident="f" module="MEI.harmony">
@@ -188,8 +165,7 @@
   </elementSpec>
   <elementSpec ident="fb" module="MEI.harmony">
     <gloss xml:lang="en">figured bass</gloss>
-    <desc xml:lang="en">Symbols added to a bass line that indicate harmony. Used to improvise a
-      chordal accompaniment. Sometimes called Generalbass, thoroughbass, or basso continuo.</desc>
+    <desc xml:lang="en">Symbols added to a bass line that indicate harmony. Used to improvise a chordal accompaniment. Sometimes called Generalbass, thoroughbass, or basso continuo.</desc>
     <classes>
       <memberOf key="att.common"/>
       <memberOf key="att.facsimile"/>
@@ -207,8 +183,7 @@
   </elementSpec>
   <elementSpec ident="harm" module="MEI.harmony">
     <gloss xml:lang="en">harmony</gloss>
-    <desc xml:lang="en">An indication of harmony, <abbr>e.g.</abbr>, chord names, tablature grids, harmonic
-      analysis, figured bass.</desc>
+    <desc xml:lang="en">An indication of harmony, <abbr>e.g.</abbr>, chord names, tablature grids, harmonic analysis, figured bass.</desc>
     <classes>
       <memberOf key="att.common"/>
       <memberOf key="att.facsimile"/>
@@ -231,12 +206,7 @@
       </rng:zeroOrMore>
     </content>
     <constraintSpec ident="harm_start-type_attributes_required" scheme="schematron">
-      <constraint>
-        <sch:rule context="mei:harm">
-          <sch:assert test="@startid or @tstamp or @tstamp.ges or @tstamp.real">Must have one of the
-            attributes: startid, tstamp, tstamp.ges or tstamp.real.</sch:assert>
-        </sch:rule>
-      </constraint>
+      <constraint> <sch:rule context="mei:harm"> <sch:assert test="@startid or @tstamp or @tstamp.ges or @tstamp.real">Must have one of the attributes: startid, tstamp, tstamp.ges or tstamp.real.</sch:assert> </sch:rule> </constraint>
     </constraintSpec>
   </elementSpec>
 </specGrp>

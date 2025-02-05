@@ -19,9 +19,7 @@
 -->
 <?xml-model href="../validation/mei_odds.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <?xml-model href="../validation/mei_odds.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<?xml-model href="../validation/mei-purify.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<specGrp xmlns="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0"
-  xmlns:sch="http://purl.oclc.org/dsdl/schematron" xml:id="module.MEI">
+<?xml-model href="../validation/mei-purify.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><specGrp xmlns="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xml:id="module.MEI">
   <moduleSpec ident="MEI">
     <desc xml:lang="en">Data type definitions.</desc>
   </moduleSpec>
@@ -36,9 +34,7 @@
       </alternate>
     </content>
     <remarks xml:lang="en">
-      <p>
-        <graphic url="../images/ExampleImages/accid-20100510.png" height="50%" width="50%"/>
-      </p>
+      <p> <graphic url="../images/ExampleImages/accid-20100510.png" height="50%" width="50%"/> </p>
     </remarks>
   </macroSpec>
   <macroSpec ident="data.ACCIDENTAL.WRITTEN.basic" module="MEI" type="dt">
@@ -166,9 +162,7 @@
       </valList>
     </content>
     <remarks xml:lang="en">
-      <p>
-        <graphic url="../images/ExampleImages/accidAEU-overview.png" height="50%" width="50%"/>
-      </p>
+      <p> <graphic url="../images/ExampleImages/accidAEU-overview.png" height="50%" width="50%"/> </p>
     </remarks>
   </macroSpec>
   <macroSpec ident="data.ACCIDENTAL.persian" module="MEI" type="dt">
@@ -249,9 +243,7 @@
     </content>
   </macroSpec>
   <macroSpec ident="data.ARTICULATION" module="MEI" type="dt">
-    <desc xml:lang="en">The following list of articulations mostly corresponds to symbols from the Western Musical
-      Symbols portion of the Unicode Standard. The dot and stroke values may be used in cases where
-      interpretation is difficult or undesirable.</desc>
+    <desc xml:lang="en">The following list of articulations mostly corresponds to symbols from the Western Musical Symbols portion of the Unicode Standard. The dot and stroke values may be used in cases where interpretation is difficult or undesirable.</desc>
     <content>
       <valList type="closed">
         <valItem ident="acc">
@@ -288,16 +280,13 @@
           <desc xml:lang="en">Unstress (Unicode 02D8).</desc>
         </valItem>
         <valItem ident="doit">
-          <desc xml:lang="en">Main note followed by short slide to higher, indeterminate pitch (Unicode
-            1D185).</desc>
+          <desc xml:lang="en">Main note followed by short slide to higher, indeterminate pitch (Unicode 1D185).</desc>
         </valItem>
         <valItem ident="scoop">
-          <desc xml:lang="en">Main note preceded by short slide from lower, indeterminate pitch (Unicode
-            1D186).</desc>
+          <desc xml:lang="en">Main note preceded by short slide from lower, indeterminate pitch (Unicode 1D186).</desc>
         </valItem>
         <valItem ident="rip">
-          <desc xml:lang="en">Main note preceded by long slide from lower, often indeterminate pitch; also known
-            as "squeeze".</desc>
+          <desc xml:lang="en">Main note preceded by long slide from lower, often indeterminate pitch; also known as "squeeze".</desc>
         </valItem>
         <valItem ident="plop">
           <desc xml:lang="en">Main note preceded by "slide" from higher, indeterminate pitch.</desc>
@@ -312,15 +301,13 @@
           <desc xml:lang="en">"lip slur" to lower pitch, then return to written pitch.</desc>
         </valItem>
         <valItem ident="flip">
-          <desc xml:lang="en">Main note followed by quick upward rise, then descent in pitch (Unicode
-            1D187).</desc>
+          <desc xml:lang="en">Main note followed by quick upward rise, then descent in pitch (Unicode 1D187).</desc>
         </valItem>
         <valItem ident="smear">
           <desc xml:lang="en">(Unicode 1D188).</desc>
         </valItem>
         <valItem ident="shake">
-          <desc xml:lang="en">Alternation between written pitch and next highest overtone (brass instruments) or
-            note minor third higher (woodwinds).</desc>
+          <desc xml:lang="en">Alternation between written pitch and next highest overtone (brass instruments) or note minor third higher (woodwinds).</desc>
         </valItem>
         <valItem ident="dnbow">
           <desc xml:lang="en">Down bow (Unicode 1D1AA).</desc>
@@ -376,18 +363,7 @@
       </valList>
     </content>
     <constraintSpec ident="warn_deprecated" scheme="schematron">
-      <constraint>
-        <sch:rule context="@artic">
-          <sch:assert role="warning"
-            test="not(contains(., 'marc-stacc')) and not(contains(., 'ten-stacc'))">"<sch:value-of
-            select="."/>" contains a deprecated value.</sch:assert>
-        </sch:rule>
-        <sch:rule context="@artic.ges">
-          <sch:assert role="warning"
-            test="not(contains(., 'marc-stacc')) and not(contains(., 'ten-stacc'))">"<sch:value-of
-            select="."/>" contains a deprecated value.</sch:assert>
-        </sch:rule>
-      </constraint>
+      <constraint> <sch:rule context="@artic"> <sch:assert role="warning" test="not(contains(., 'marc-stacc')) and not(contains(., 'ten-stacc'))">"<sch:value-of select="."/>" contains a deprecated value.</sch:assert> </sch:rule> <sch:rule context="@artic.ges"> <sch:assert role="warning" test="not(contains(., 'marc-stacc')) and not(contains(., 'ten-stacc'))">"<sch:value-of select="."/>" contains a deprecated value.</sch:assert> </sch:rule> </constraint>
     </constraintSpec>
   </macroSpec>
   <macroSpec ident="data.AUGMENTDOT" module="MEI" type="dt">
@@ -399,8 +375,7 @@
     </content>
   </macroSpec>
   <macroSpec ident="data.BARMETHOD" module="MEI" type="dt">
-    <desc xml:lang="en">Records where bar lines are drawn. The value 'staff' describes the traditional placement
-      of bar lines.</desc>
+    <desc xml:lang="en">Records where bar lines are drawn. The value 'staff' describes the traditional placement of bar lines.</desc>
     <content>
       <valList type="closed">
         <valItem ident="mensur">
@@ -416,8 +391,7 @@
     </content>
   </macroSpec>
   <macroSpec ident="data.BARRENDITION" module="MEI" type="dt">
-    <desc xml:lang="en">Renderings of bar lines. Some values correspond to the Western Musical Symbols portion of
-      the Unicode Standard.</desc>
+    <desc xml:lang="en">Renderings of bar lines. Some values correspond to the Western Musical Symbols portion of the Unicode Standard.</desc>
     <content>
       <valList type="closed">
         <valItem ident="dashed">
@@ -500,10 +474,7 @@
       </rng:data>
     </content>
     <remarks xml:lang="en">
-      <p>The value must fall between 0 and the numerator of the time signature + 1,
-        where 0 represents the left bar line and the upper boundary represents the right bar line.
-        For example, in 12/8 the value must be in the range from 0 to 13.
-      </p>
+      <p>The value must fall between 0 and the numerator of the time signature + 1, where 0 represents the left bar line and the upper boundary represents the right bar line. For example, in 12/8 the value must be in the range from 0 to 13. </p>
     </remarks>
   </macroSpec>
   <macroSpec ident="data.BEATRPT.REND" module="MEI" type="dt">
@@ -520,8 +491,7 @@
     </content>
   </macroSpec>
   <macroSpec ident="data.BEND.AMOUNT" module="MEI" type="dt">
-    <desc xml:lang="en">Either an integer value, a decimal value, or a token. Fractional values are limited to
-      .25, .5, .75, while the token value is restricted to 'full'.</desc>
+    <desc xml:lang="en">Either an integer value, a decimal value, or a token. Fractional values are limited to .25, .5, .75, while the token value is restricted to 'full'.</desc>
     <content>
       <rng:choice>
         <rng:data type="decimal">
@@ -585,9 +555,7 @@
     </content>
   </macroSpec>
   <macroSpec ident="data.CERTAINTY" module="MEI" type="dt">
-    <desc xml:lang="en">Values for certainty attribute. Certainty may be expressed by one of the predefined symbolic values <val>high</val>, 
-      <val>medium</val>, or <val>low</val>. The value <val>unknown</val> should be used in cases where the encoder 
-      does not wish to assert an opinion about the matter.</desc>
+    <desc xml:lang="en">Values for certainty attribute. Certainty may be expressed by one of the predefined symbolic values <val>high</val>, <val>medium</val>, or <val>low</val>. The value <val>unknown</val> should be used in cases where the encoder does not wish to assert an opinion about the matter.</desc>
     <content>
       <valList type="closed">
         <valItem ident="high">
@@ -606,15 +574,13 @@
     </content>
   </macroSpec>
   <macroSpec ident="data.CLEFLINE" module="MEI" type="dt">
-    <desc xml:lang="en">Clef line attribute values. The value must be in the range between 1 and the number of
-      lines on the staff. The numbering of lines starts with the lowest line of the staff.</desc>
+    <desc xml:lang="en">Clef line attribute values. The value must be in the range between 1 and the number of lines on the staff. The numbering of lines starts with the lowest line of the staff.</desc>
     <content>
       <rng:data type="positiveInteger"/>
     </content>
   </macroSpec>
   <macroSpec ident="data.CLEFSHAPE" module="MEI" type="dt">
-    <desc xml:lang="en">Clef shape attribute values (Read, p.53-56). Some values correspond to the Unicode
-      Standard.</desc>
+    <desc xml:lang="en">Clef shape attribute values (Read, p.53-56). Some values correspond to the Unicode Standard.</desc>
     <content>
       <valList type="closed">
         <valItem ident="G">
@@ -641,12 +607,7 @@
       </valList>
     </content>
     <remarks xml:lang="en">
-      <p>Double-G clefs sound one octave lower, so do not combine with <att>dis</att>/
-        <att>dis.place</att>/<att>clef.dis</att>/<att>clef.dis.place</att>. In some cases
-        the double G clef may be used to indicate that two voices share one staff and 
-        does not sound one octave lower. In this case the <att>oct</att> attribute may be 
-        used to clarify the sounding octave of the instruments for the clef.
-      </p>
+      <p>Double-G clefs sound one octave lower, so do not combine with <att>dis</att>/ <att>dis.place</att>/<att>clef.dis</att>/<att>clef.dis.place</att>. In some cases the double G clef may be used to indicate that two voices share one staff and does not sound one octave lower. In this case the <att>oct</att> attribute may be used to clarify the sounding octave of the instruments for the clef. </p>
     </remarks>
   </macroSpec>
   <macroSpec ident="data.CLUSTER" module="MEI" type="dt">
@@ -666,8 +627,7 @@
     </content>
   </macroSpec>
   <macroSpec ident="data.CONFIDENCE" module="MEI" type="dt">
-    <desc xml:lang="en">Confidence is expressed as a real number between 0 and 1; 0 representing certainly false
-      and 1 representing certainly true.</desc>
+    <desc xml:lang="en">Confidence is expressed as a real number between 0 and 1; 0 representing certainly false and 1 representing certainly true.</desc>
     <content>
       <rng:data type="decimal">
         <rng:param name="minInclusive">0</rng:param>
@@ -1126,9 +1086,7 @@
       </valList>
     </content>
     <remarks xml:lang="en">
-      <p>Color names are taken from the list at <ref
-        target="https://www.w3.org/TR/css-color-4/"
-        >https://www.w3.org/TR/css-color-4/</ref>. </p>
+      <p>Color names are taken from the list at <ref target="https://www.w3.org/TR/css-color-4/">https://www.w3.org/TR/css-color-4/</ref>. </p>
       <p>All of these keywords are case-insensitive.</p>
     </remarks>
   </macroSpec>
@@ -1146,30 +1104,25 @@
         </rng:data>
         <!-- RGB values -->
         <rng:data type="token">
-          <rng:param name="pattern"
-            >rgb\((\s*(([01]?[0-9]?[0-9])|2[0-4][0-9]|25[0-5])\s*,\s*){2}([01]?[0-9]?[0-9]|2[0-4][0-9]|25[0-5])\s*\)</rng:param>
+          <rng:param name="pattern">rgb\((\s*(([01]?[0-9]?[0-9])|2[0-4][0-9]|25[0-5])\s*,\s*){2}([01]?[0-9]?[0-9]|2[0-4][0-9]|25[0-5])\s*\)</rng:param>
         </rng:data>
         <!-- RGBA values -->
         <rng:data type="token">
-          <rng:param name="pattern"
-            >rgba\(\s*(([01]?[0-9]?[0-9]|2[0-4][0-9]|25[0-5])\s*,\s*){3}(0(\.\d+)?|1(\.0+)?)\s*\)|rgba\(\s*(((\d{1,2})?%|100%)\s*,\s*){2}(\d{1,2}%|100%)\s*,\s*(0(\.\d+)?|1(\.0+)?)\s*\)</rng:param>
+          <rng:param name="pattern">rgba\(\s*(([01]?[0-9]?[0-9]|2[0-4][0-9]|25[0-5])\s*,\s*){3}(0(\.\d+)?|1(\.0+)?)\s*\)|rgba\(\s*(((\d{1,2})?%|100%)\s*,\s*){2}(\d{1,2}%|100%)\s*,\s*(0(\.\d+)?|1(\.0+)?)\s*\)</rng:param>
         </rng:data>
         <!-- HSL values -->
         <rng:data type="token">
-          <rng:param name="pattern"
-            >hsl\(\s*((\d{1,2})|[12]\d{2}|3[0-5]\d|360)\s*,\s*(\d{1,2}%|100%)\s*,\s*(\d{1,2}%|100%)\s*\)</rng:param>
+          <rng:param name="pattern">hsl\(\s*((\d{1,2})|[12]\d{2}|3[0-5]\d|360)\s*,\s*(\d{1,2}%|100%)\s*,\s*(\d{1,2}%|100%)\s*\)</rng:param>
         </rng:data>
         <!-- HSLA values -->
         <rng:data type="token">
-          <rng:param name="pattern"
-            >hsla\(\s*(\d{1,2}|[12]\d{2}|3[0-5]\d|360)\s*,\s*(\d{1,2}%|100%)\s*,\s*(\d{1,2}%|100%)\s*,\s*(0(\.\d+)?|1(\.0+)?)\s*\)</rng:param>
+          <rng:param name="pattern">hsla\(\s*(\d{1,2}|[12]\d{2}|3[0-5]\d|360)\s*,\s*(\d{1,2}%|100%)\s*,\s*(\d{1,2}%|100%)\s*,\s*(0(\.\d+)?|1(\.0+)?)\s*\)</rng:param>
         </rng:data>
       </rng:choice>
     </content>
   </macroSpec>
   <macroSpec ident="data.COLOR" module="MEI" type="dt">
-    <desc xml:lang="en">A value in one of the following forms is expected: 1) hexadecimal RRGGBB, 2) hexadecimal
-      RRGGBBAA, 3) CSS RGB, 4) CSS RGBA, 5) HSL, 6) HSLA, or 7) CSS color name.</desc>
+    <desc xml:lang="en">A value in one of the following forms is expected: 1) hexadecimal RRGGBB, 2) hexadecimal RRGGBBAA, 3) CSS RGB, 4) CSS RGBA, 5) HSL, 6) HSLA, or 7) CSS color name.</desc>
     <content>
       <rng:choice>
         <rng:ref name="data.COLORNAMES"/>
@@ -1225,8 +1178,7 @@
     </content>
   </macroSpec>
   <macroSpec ident="data.DEGREES" module="MEI" type="dt">
-    <desc xml:lang="en">360th-unit measure of a circle’s circumference; optionally signed decimal number between
-      -360 and 360.</desc>
+    <desc xml:lang="en">360th-unit measure of a circle’s circumference; optionally signed decimal number between -360 and 360.</desc>
     <content>
       <rng:data type="decimal">
         <rng:param name="maxInclusive">360.0</rng:param>
@@ -1356,9 +1308,7 @@
     </content>
   </macroSpec>
   <macroSpec ident="data.FILL" module="MEI" type="dt">
-    <desc xml:lang="en">Describes how a graphical object, such as a note head, should be filled. The relative
-      values — top, bottom, left, and right — indicate these locations *after* rotation is
-      applied.</desc>
+    <desc xml:lang="en">Describes how a graphical object, such as a note head, should be filled. The relative values — top, bottom, left, and right — indicate these locations *after* rotation is applied.</desc>
     <content>
       <valList type="closed">
         <valItem ident="void">
@@ -1383,10 +1333,7 @@
     </content>
   </macroSpec>
   <macroSpec ident="data.FINGER.FRET" module="MEI" type="dt">
-    <desc xml:lang="en">In a guitar chord diagram, a label indicating which finger, if any, should be used to play
-      an individual string. The index, middle, ring, and little fingers are represented by the
-      values 1-4, while 't' is for the thumb. The values 'x' and 'o' indicate stopped and open
-      strings, respectively.</desc>
+    <desc xml:lang="en">In a guitar chord diagram, a label indicating which finger, if any, should be used to play an individual string. The index, middle, ring, and little fingers are represented by the values 1-4, while 't' is for the thumb. The values 'x' and 'o' indicate stopped and open strings, respectively.</desc>
     <content>
       <rng:choice>
         <rng:data type="positiveInteger">
@@ -1519,8 +1466,7 @@
     </content>
   </macroSpec>
   <macroSpec ident="data.FRETNUMBER" module="MEI" type="dt">
-    <desc xml:lang="en">In string tablature, the fret number. The value <val>0</val> (zero) indicates the open
-      string.</desc>
+    <desc xml:lang="en">In string tablature, the fret number. The value <val>0</val> (zero) indicates the open string.</desc>
     <content>
       <rng:data type="nonNegativeInteger"/>
     </content>
@@ -1695,22 +1641,18 @@
       </rng:data>
     </content>
     <remarks xml:lang="en">
-      <p>
-        <list>
-          <head>Interval qualities:</head>
-          <item>A = augmented,</item>
-          <item>d = diminished,</item>
-          <item>M = major,</item>
-          <item>m = minor,</item>
-          <item>P = perfect</item>
-        </list>
-      </p>
+      <p> <list>
+        <head>Interval qualities:</head>
+        <item>A = augmented,</item>
+        <item>d = diminished,</item>
+        <item>M = major,</item>
+        <item>m = minor,</item>
+        <item>P = perfect</item>
+        </list> </p>
     </remarks>
   </macroSpec>
   <macroSpec ident="data.INTERVAL.MELODIC" module="MEI" type="dt">
-    <desc xml:lang="en">A token indicating direction of the interval but not its precise value, a diatonic
-      interval (with optional direction and quality), or a decimal value in half steps. Decimal
-      values are permitted to accommodate micro-tuning.</desc>
+    <desc xml:lang="en">A token indicating direction of the interval but not its precise value, a diatonic interval (with optional direction and quality), or a decimal value in half steps. Decimal values are permitted to accommodate micro-tuning.</desc>
     <content>
       <rng:choice>
         <rng:data type="token">
@@ -1725,42 +1667,34 @@
       </rng:choice>
     </content>
     <remarks xml:lang="en">
-      <p>
-        <list>
-          <head>Interval direction only:</head>
-          <item>u = up/higher,</item>
-          <item>d = down/lower,</item>
-          <item>s = same,</item>
-          <item>n = neutral/unknown,</item>
-          <item>sd = same or lower (but not higher),</item>
-          <item>su = same or higher (but not lower)</item>
-        </list>
-      </p>
-      <p>
-        <list>
-          <head>Interval direction, quality, and size:</head>
-          <item>optional sign,</item>
-          <item>
-            <list>
-              <head>optional quality indicator:</head>
-              <item>A = augmented,</item>
-              <item>d = diminished,</item>
-              <item>M = major,</item>
-              <item>m = minor,</item>
-              <item>P = perfect</item>
-            </list>
-          </item>
-          <item>integer value</item>
-        </list>
-      </p>
-      <p>
-        <list>
-          <head>Interval in half steps:</head>
-          <item>optional sign,</item>
-          <item>decimal value</item>
-          <item>"hs"</item>
-        </list>
-      </p>
+      <p> <list>
+        <head>Interval direction only:</head>
+        <item>u = up/higher,</item>
+        <item>d = down/lower,</item>
+        <item>s = same,</item>
+        <item>n = neutral/unknown,</item>
+        <item>sd = same or lower (but not higher),</item>
+        <item>su = same or higher (but not lower)</item>
+        </list> </p>
+      <p> <list>
+        <head>Interval direction, quality, and size:</head>
+        <item>optional sign,</item>
+        <item> <list>
+          <head>optional quality indicator:</head>
+          <item>A = augmented,</item>
+          <item>d = diminished,</item>
+          <item>M = major,</item>
+          <item>m = minor,</item>
+          <item>P = perfect</item>
+          </list> </item>
+        <item>integer value</item>
+        </list> </p>
+      <p> <list>
+        <head>Interval in half steps:</head>
+        <item>optional sign,</item>
+        <item>decimal value</item>
+        <item>"hs"</item>
+        </list> </p>
     </remarks>
   </macroSpec>
   <macroSpec ident="data.ISODATE" module="MEI" type="dt">
@@ -1782,8 +1716,7 @@
     </content>
   </macroSpec>
   <macroSpec ident="data.ISOTIME" module="MEI" type="dt">
-    <desc xml:lang="en">ISO 24-hour time format: HH:MM:SS.ss, <abbr>i.e.</abbr>,
-      [0-9][0-9]:[0-9][0-9]:[0-9][0-9](\.?[0-9]*)?.</desc>
+    <desc xml:lang="en">ISO 24-hour time format: HH:MM:SS.ss, <abbr>i.e.</abbr>, [0-9][0-9]:[0-9][0-9]:[0-9][0-9](\.?[0-9]*)?.</desc>
     <content>
       <rng:data type="time"/>
     </content>
@@ -1797,12 +1730,7 @@
     </content>
   </macroSpec>
   <macroSpec ident="data.LAYERSCHEME" module="MEI" type="dt">
-    <desc xml:lang="en">Indicates how stems should be drawn when more than one layer is present and stem
-      directions are not indicated on the notes/chords themselves. '1' indicates that there is only
-      a single layer on a staff. '2o' means there are two layers with opposing stems. '2f' indicates
-      two 'free' layers; that is, opposing stems will be drawn unless one of the layers has 'space'.
-      In that case, stem direction in the remaining layer will be determined as if there were only
-      one layer. '3o' and '3f' are analogous to '2o' and '2f' with three layers allowed.</desc>
+    <desc xml:lang="en">Indicates how stems should be drawn when more than one layer is present and stem directions are not indicated on the notes/chords themselves. '1' indicates that there is only a single layer on a staff. '2o' means there are two layers with opposing stems. '2f' indicates two 'free' layers; that is, opposing stems will be drawn unless one of the layers has 'space'. In that case, stem direction in the remaining layer will be determined as if there were only one layer. '3o' and '3f' are analogous to '2o' and '2f' with three layers allowed.</desc>
     <content>
       <valList type="closed">
         <valItem ident="1">
@@ -1951,15 +1879,7 @@
     </content>
   </macroSpec>
   <macroSpec ident="data.MEASUREBEAT" module="MEI" type="dt">
-    <desc xml:lang="en">A count of measures plus a beat location, <abbr>i.e.</abbr>, [0-9]+m *\+ *[0-9]+(\.?[0-9]*)?. The
-      measure count is the number of bar lines crossed by the event, while the beat location is a
-      timestamp expressed as a beat with an optional fractional part. For example, "1m+3.5"
-      indicates a point in the next measure on the second half of beat 3. The measure number must be
-      in the range of 0 to the number of remaining measures, while the beat number must be in the
-      range from 0 to the numerator of the time signature plus 1. For example, in 6/8 the beat
-      number must be within the range from 0 (the left bar line) to 7 (the right bar line). A value
-      with a measure number of "0", such as "0m+2", indicates a point within the current
-      measure.</desc>
+    <desc xml:lang="en">A count of measures plus a beat location, <abbr>i.e.</abbr>, [0-9]+m *\+ *[0-9]+(\.?[0-9]*)?. The measure count is the number of bar lines crossed by the event, while the beat location is a timestamp expressed as a beat with an optional fractional part. For example, "1m+3.5" indicates a point in the next measure on the second half of beat 3. The measure number must be in the range of 0 to the number of remaining measures, while the beat number must be in the range from 0 to the numerator of the time signature plus 1. For example, in 6/8 the beat number must be within the range from 0 (the left bar line) to 7 (the right bar line). A value with a measure number of "0", such as "0m+2", indicates a point within the current measure.</desc>
     <content>
       <rng:data type="token">
         <rng:param name="pattern">([0-9]+m\s*\+\s*)?[0-9]+(\.?[0-9]*)?</rng:param>
@@ -1967,16 +1887,7 @@
     </content>
   </macroSpec>
   <macroSpec ident="data.MEASUREBEATOFFSET" module="MEI" type="dt">
-    <desc xml:lang="en">A count of measures plus a beat location, <abbr>i.e.</abbr>, (\+|-)?[0-9]+m\+[0-9]+(\.?[0-9]*)?. The
-      measure count is the number of bar lines crossed by the event, while the beat location is a
-      timestamp expressed as a beat with an optional fractional part. The measure number must be in
-      the range of preceding measures to the number of remaining measures. A value with a positive
-      measure number, such as "1m+3", indicates a point in the following measure, while a value with
-      a negative measure number, such as "-1m+3", marks a point in the preceding measure. The beat
-      number must be in the range from 0 to the numerator of the time signature plus 1. For example,
-      in 6/8 the beat number must be within the range from 0 (the left bar line) to 7 (the right
-      bar line). A value with a measure number of "0", such as "0m+2", indicates a point within the
-      current measure.</desc>
+    <desc xml:lang="en">A count of measures plus a beat location, <abbr>i.e.</abbr>, (\+|-)?[0-9]+m\+[0-9]+(\.?[0-9]*)?. The measure count is the number of bar lines crossed by the event, while the beat location is a timestamp expressed as a beat with an optional fractional part. The measure number must be in the range of preceding measures to the number of remaining measures. A value with a positive measure number, such as "1m+3", indicates a point in the following measure, while a value with a negative measure number, such as "-1m+3", marks a point in the preceding measure. The beat number must be in the range from 0 to the numerator of the time signature plus 1. For example, in 6/8 the beat number must be within the range from 0 (the left bar line) to 7 (the right bar line). A value with a measure number of "0", such as "0m+2", indicates a point within the current measure.</desc>
     <content>
       <rng:data type="token">
         <rng:param name="pattern">(\+|-)?[0-9]+m\+[0-9]+(\.[0-9]*)?</rng:param>
@@ -1984,9 +1895,7 @@
     </content>
   </macroSpec>
   <macroSpec ident="data.MEASUREMENTUNSIGNED" module="MEI" type="dt">
-    <desc xml:lang="en">Measurement expressed in real-world (<abbr>e.g.</abbr>, centimeters, millimeters, inches, points,
-      picas, or pixels) or virtual units (vu). 'vu' is the default value. Unlike
-      data.MEASUREMENTSIGNED, only positive values are allowed.</desc>
+    <desc xml:lang="en">Measurement expressed in real-world (<abbr>e.g.</abbr>, centimeters, millimeters, inches, points, picas, or pixels) or virtual units (vu). 'vu' is the default value. Unlike data.MEASUREMENTSIGNED, only positive values are allowed.</desc>
     <content>
       <rng:data type="token">
         <rng:param name="pattern">(\+)?\d+(\.\d+)?(cm|mm|in|pt|pc|px|vu)?</rng:param>
@@ -1994,10 +1903,7 @@
     </content>
   </macroSpec>
   <macroSpec ident="data.MEASUREMENTSIGNED" module="MEI" type="dt">
-    <desc xml:lang="en">Measurement expressed in real-world (<abbr>e.g.</abbr>, centimeters, millimeters, inches, points,
-      picas, or pixels) or virtual units (vu). 'vu' is the default value. Unlike
-      data.MEASUREMENTUNSIGNED, in which only positive values are allowed, both positive and negative
-      values are permitted.</desc>
+    <desc xml:lang="en">Measurement expressed in real-world (<abbr>e.g.</abbr>, centimeters, millimeters, inches, points, picas, or pixels) or virtual units (vu). 'vu' is the default value. Unlike data.MEASUREMENTUNSIGNED, in which only positive values are allowed, both positive and negative values are permitted.</desc>
     <content>
       <rng:data type="token">
         <rng:param name="pattern">(\+|-)?\d+(\.\d+)?(cm|mm|in|pt|pc|px|vu)?</rng:param>
@@ -2005,9 +1911,7 @@
     </content>
   </macroSpec>
   <macroSpec ident="data.MEASUREMENTFONTUNSIGNED" module="MEI" type="dt">
-    <desc xml:lang="en">Measurement expressed relative to properties of the current font, in analogy to the
-      respective CSS length units. Unlike data.MEASUREMENTFONTUNSIGNED, only positive values are
-      allowed.</desc>
+    <desc xml:lang="en">Measurement expressed relative to properties of the current font, in analogy to the respective CSS length units. Unlike data.MEASUREMENTFONTUNSIGNED, only positive values are allowed.</desc>
     <content>
       <rng:data type="token">
         <rng:param name="pattern">\d+(\.\d+)?(ch|em|ex)?</rng:param>
@@ -2015,9 +1919,7 @@
     </content>
   </macroSpec>
   <macroSpec ident="data.MEASUREMENTFONTSIGNED" module="MEI" type="dt">
-    <desc xml:lang="en">Measurement expressed relative to properties of the current font, in analogy to the
-      respective CSS length units. Unlike data.MEASUREMENTFONTUNSIGNED, both positive and negative values
-      are allowed.</desc>
+    <desc xml:lang="en">Measurement expressed relative to properties of the current font, in analogy to the respective CSS length units. Unlike data.MEASUREMENTFONTUNSIGNED, both positive and negative values are allowed.</desc>
     <content>
       <rng:data type="token">
         <rng:param name="pattern">(\+|-)?\d+(\.\d+)?(ch|em|ex)?</rng:param>
@@ -2025,8 +1927,7 @@
     </content>
   </macroSpec>
   <macroSpec ident="data.MEASUREMENTTYPOGRAPHYUNSIGNED" module="MEI" type="dt">
-    <desc xml:lang="en">Measurements used for typographical features. Unlike data.MEASUREMENTTYPOGRAPHYSIGNED, only
-      positive values are allowed.</desc>
+    <desc xml:lang="en">Measurements used for typographical features. Unlike data.MEASUREMENTTYPOGRAPHYSIGNED, only positive values are allowed.</desc>
     <content>
       <rng:choice>
         <rng:ref name="data.MEASUREMENTFONTUNSIGNED"/>
@@ -2035,8 +1936,7 @@
     </content>
   </macroSpec>
   <macroSpec ident="data.MEASUREMENTTYPOGRAPHYSIGNED" module="MEI" type="dt">
-    <desc xml:lang="en">Measurements used for typographical features. Unlike data.MEASUREMENTTYPOGRAPHYSIGNED, both
-      positive and negative values are allowed.</desc>
+    <desc xml:lang="en">Measurements used for typographical features. Unlike data.MEASUREMENTTYPOGRAPHYSIGNED, both positive and negative values are allowed.</desc>
     <content>
       <rng:choice>
         <rng:ref name="data.MEASUREMENTFONTSIGNED"/>
@@ -2045,8 +1945,7 @@
     </content>
   </macroSpec>
   <macroSpec ident="data.MELODICFUNCTION" module="MEI" type="dt">
-    <desc xml:lang="en">Indication of melodic function, <abbr>i.e.</abbr>, anticipation, lower neighbor, escape tone,
-      etc.</desc>
+    <desc xml:lang="en">Indication of melodic function, <abbr>i.e.</abbr>, anticipation, lower neighbor, escape tone, etc.</desc>
     <content>
       <valList type="closed">
         <valItem ident="aln">
@@ -2232,8 +2131,7 @@
     </content>
   </macroSpec>
   <macroSpec ident="data.MIDIBPM" module="MEI" type="dt">
-    <desc xml:lang="en">Tempo expressed as "beats" per minute, where "beat" is always defined as a quarter note,
-      *not the numerator of the time signature or the metronomic indication*.</desc>
+    <desc xml:lang="en">Tempo expressed as "beats" per minute, where "beat" is always defined as a quarter note, *not the numerator of the time signature or the metronomic indication*.</desc>
     <content>
       <rng:data type="decimal">
         <rng:param name="minExclusive">0</rng:param>
@@ -2241,8 +2139,7 @@
     </content>
   </macroSpec>
   <macroSpec ident="data.MIDIMSPB" module="MEI" type="dt">
-    <desc xml:lang="en">Tempo expressed as microseconds per "beat", where "beat" is always defined as a quarter
-      note, *not the numerator of the time signature or the metronomic indication*.</desc>
+    <desc xml:lang="en">Tempo expressed as microseconds per "beat", where "beat" is always defined as a quarter note, *not the numerator of the time signature or the metronomic indication*.</desc>
     <content>
       <rng:data type="positiveInteger"/>
     </content>
@@ -2779,9 +2676,7 @@
       </valList>
     </content>
     <remarks xml:lang="en">
-      <p>Instrument names are based on the official list in the <ref
-        target="https://www.midi.org/specifications-old/item/gm-level-1-sound-set"
-        >General MIDI Specifications</ref>.</p>
+      <p>Instrument names are based on the official list in the <ref target="https://www.midi.org/specifications-old/item/gm-level-1-sound-set">General MIDI Specifications</ref>.</p>
       <p>MEI uses 0-based program numbers.</p>
       <p>Percussion sounds are available when the MIDI channel is set to "10".</p>
     </remarks>
@@ -2923,15 +2818,13 @@
           <desc xml:lang="en">Intellectual or physical component of the resource.</desc>
         </valItem>
         <valItem ident="otherVersion">
-          <desc xml:lang="en">Version of the resource’s intellectual content not changed enough to be a different
-            work.</desc>
+          <desc xml:lang="en">Version of the resource’s intellectual content not changed enough to be a different work.</desc>
         </valItem>
         <valItem ident="otherFormat">
           <desc xml:lang="en">Version of the resource in a different physical format.</desc>
         </valItem>
         <valItem ident="isReferencedBy">
-          <desc xml:lang="en">Published bibliographic description, review, abstract, or index of the resource's
-            content.</desc>
+          <desc xml:lang="en">Published bibliographic description, review, abstract, or index of the resource's content.</desc>
         </valItem>
         <valItem ident="references">
           <desc xml:lang="en">Cited or referred to in the resource.</desc>
@@ -2964,15 +2857,13 @@
     </content>
   </macroSpec>
   <macroSpec ident="data.NCNAME" module="MEI" type="dt">
-    <desc xml:lang="en">"Convenience" datatype that permits combining enumerated values with a user-supplied
-      name.</desc>
+    <desc xml:lang="en">"Convenience" datatype that permits combining enumerated values with a user-supplied name.</desc>
     <content>
       <rng:data type="NCName"/>
     </content>
   </macroSpec>
   <macroSpec ident="data.NMTOKEN" module="MEI" type="dt">
-    <desc xml:lang="en">"Convenience" datatype that permits combining enumerated values with user-supplied
-      values.</desc>
+    <desc xml:lang="en">"Convenience" datatype that permits combining enumerated values with user-supplied values.</desc>
     <content>
       <rng:data type="NMTOKEN"/>
     </content>
@@ -3009,19 +2900,16 @@
           <desc xml:lang="en">Between the lines of text, less exact than "sub" or "super".</desc>
         </valItem>
         <valItem ident="super">
-          <desc xml:lang="en">Above a line of text, more exact than "intra(linear)". Do not confuse with
-            superscript rendition.</desc>
+          <desc xml:lang="en">Above a line of text, more exact than "intra(linear)". Do not confuse with superscript rendition.</desc>
         </valItem>
         <valItem ident="sub">
-          <desc xml:lang="en">Below a line of text, more exact than "intra(linear)". Do not confuse with subscript
-            rendition.</desc>
+          <desc xml:lang="en">Below a line of text, more exact than "intra(linear)". Do not confuse with subscript rendition.</desc>
         </valItem>
         <valItem ident="inspace">
           <desc xml:lang="en">In a predefined space; <abbr>i.e.</abbr>, that left by an earlier scribe.</desc>
         </valItem>
         <valItem ident="superimposed">
-          <desc xml:lang="en">Obscures original text; <abbr>e.g.</abbr>, via overstrike, addition of new writing surface
-            material, etc.</desc>
+          <desc xml:lang="en">Obscures original text; <abbr>e.g.</abbr>, via overstrike, addition of new writing surface material, etc.</desc>
         </valItem>
       </valList>
     </content>
@@ -3075,8 +2963,7 @@
     </content>
   </macroSpec>
   <macroSpec ident="data.NOTEHEADMODIFIER" module="MEI" type="dt">
-    <desc xml:lang="en">Captures any notehead "modifiers"; that is, symbols added to the notehead, such as
-      slashes, lines, text, and enclosures, etc.</desc>
+    <desc xml:lang="en">Captures any notehead "modifiers"; that is, symbols added to the notehead, such as slashes, lines, text, and enclosures, etc.</desc>
     <content>
       <rng:choice>
         <rng:ref name="data.NOTEHEADMODIFIER.list"/>
@@ -3143,8 +3030,7 @@
     </content>
   </macroSpec>
   <macroSpec ident="data.OCTAVE.DIS" module="MEI" type="dt">
-    <desc xml:lang="en">The amount of octave displacement; that is, '8' (as in '8va' for 1 octave), '15' (for 2
-      octaves), or rarely '22' (for 3 octaves).</desc>
+    <desc xml:lang="en">The amount of octave displacement; that is, '8' (as in '8va' for 1 octave), '15' (for 2 octaves), or rarely '22' (for 3 octaves).</desc>
     <content>
       <rng:data type="positiveInteger">
         <rng:param name="pattern">8|15|22</rng:param>
@@ -3160,8 +3046,7 @@
     </content>
   </macroSpec>
   <macroSpec ident="data.NEIGHBORINGLAYER" module="MEI" type="dt">
-    <desc xml:lang="en">For musical material designated to appear on an adjacent layer or staff, the location of the layer
-      relative to the current one; <abbr>i.e.</abbr>, the layer above or the layer below.</desc>
+    <desc xml:lang="en">For musical material designated to appear on an adjacent layer or staff, the location of the layer relative to the current one; <abbr>i.e.</abbr>, the layer above or the layer below.</desc>
     <content>
       <valList type="closed">
         <valItem ident="above">
@@ -3187,24 +3072,20 @@
     <content>
       <valList type="closed">
         <valItem ident="line">
-          <desc xml:lang="en">Continuous line with start and end positions rendered by vertical bars and bounces
-            shown by upward-pointing "blips".</desc>
+          <desc xml:lang="en">Continuous line with start and end positions rendered by vertical bars and bounces shown by upward-pointing "blips".</desc>
         </valItem>
         <valItem ident="pedline">
-          <desc xml:lang="en">Pedal down and half pedal rendered with "Ped." followed by a line with 
-            end position rendered by vertical bars and bounces shown by upward-pointing "blips".</desc>
+          <desc xml:lang="en">Pedal down and half pedal rendered with "Ped." followed by a line with end position rendered by vertical bars and bounces shown by upward-pointing "blips".</desc>
         </valItem>
         <valItem ident="pedstar">
-          <desc xml:lang="en">Pedal down and half pedal rendered with "Ped.", pedal up rendered by "*", pedal
-            "bounce" rendered with "* Ped.".</desc>
+          <desc xml:lang="en">Pedal down and half pedal rendered with "Ped.", pedal up rendered by "*", pedal "bounce" rendered with "* Ped.".</desc>
         </valItem>
         <valItem ident="altpedstar">
-          <desc xml:lang="en">Pedal up and down indications same as with "pedstar", but bounce is rendered with
-            "Ped." only.</desc>
+          <desc xml:lang="en">Pedal up and down indications same as with "pedstar", but bounce is rendered with "Ped." only.</desc>
         </valItem>
       </valList>
     </content>
-</macroSpec>
+  </macroSpec>
   <macroSpec ident="data.PERCENT" module="MEI" type="dt">
     <desc xml:lang="en">Positive decimal number plus '%', <abbr>i.e.</abbr>, [0-9]+(\.[0-9]*)?%.</desc>
     <content>
@@ -3269,8 +3150,7 @@
     </content>
   </macroSpec>
   <macroSpec ident="data.PITCHNAME" module="MEI" type="dt">
-    <desc xml:lang="en">The pitch names (gamut) used within a single octave. The default values conform to
-      Acoustical Society of America representation.</desc>
+    <desc xml:lang="en">The pitch names (gamut) used within a single octave. The default values conform to Acoustical Society of America representation.</desc>
     <content>
       <rng:data type="token">
         <rng:param name="pattern">[a-g]</rng:param>
@@ -3278,8 +3158,7 @@
     </content>
   </macroSpec>
   <macroSpec ident="data.PITCHNAME.GESTURAL" module="MEI" type="dt">
-    <desc xml:lang="en">Gestural pitch names need an additional value for when the notated pitch is not to be
-      sounded.</desc>
+    <desc xml:lang="en">Gestural pitch names need an additional value for when the notated pitch is not to be sounded.</desc>
     <content>
       <rng:data type="token">
         <rng:param name="pattern">[a-g]|none</rng:param>
@@ -3302,15 +3181,7 @@
       </rng:choice>
     </content>
     <constraintSpec ident="constrain_place" scheme="schematron">
-      <constraint>
-        <sch:rule context="@place">
-          <sch:assert
-            test="not((some $token in tokenize(normalize-space(.),' ') satisfies
-            $token =('below','above','between','within')) and count(tokenize(normalize-space(.),' ')) gt 1)"
-            >Other values not permitted when 'above', 'below', 'between' or 'within' is
-            present.</sch:assert>
-        </sch:rule>
-      </constraint>
+      <constraint> <sch:rule context="@place"> <sch:assert test="not((some $token in tokenize(normalize-space(.),' ') satisfies             $token =('below','above','between','within')) and count(tokenize(normalize-space(.),' ')) gt 1)">Other values not permitted when 'above', 'below', 'between' or 'within' is present.</sch:assert> </sch:rule> </constraint>
     </constraintSpec>
   </macroSpec>
   <macroSpec ident="data.PROLATIO" module="MEI" type="dt">
@@ -3395,8 +3266,7 @@
     </content>
   </macroSpec>
   <macroSpec ident="data.SLUR" module="MEI" type="dt">
-    <desc xml:lang="en">i=initial, m=medial, t=terminal. Number is used to match endpoints of the slur when slurs
-      are nested or overlap.</desc>
+    <desc xml:lang="en">i=initial, m=medial, t=terminal. Number is used to match endpoints of the slur when slurs are nested or overlap.</desc>
     <content>
       <rng:data type="token">
         <rng:param name="pattern">[i|m|t][1-6]</rng:param>
@@ -3461,10 +3331,7 @@
     </content>
   </macroSpec>
   <macroSpec ident="data.STAFFLOC" module="MEI" type="dt">
-    <desc xml:lang="en">Staff location. The value <val>0</val> indicates the bottom line of the current staff; positive
-      values are used for positions above the bottom line and negative values for the positions
-      below. For example, in treble clef, 1 = F4, 2 = G4, 3 = A4, etc. and -1 = D4, -2 = C4, and so
-      on.</desc>
+    <desc xml:lang="en">Staff location. The value <val>0</val> indicates the bottom line of the current staff; positive values are used for positions above the bottom line and negative values for the positions below. For example, in treble clef, 1 = F4, 2 = G4, 3 = A4, etc. and -1 = D4, -2 = C4, and so on.</desc>
     <content>
       <rng:data type="integer"/>
     </content>
@@ -3478,19 +3345,7 @@
       </rng:choice>
     </content>
     <constraintSpec ident="between_requires_adjacent_staves" scheme="schematron">
-      <constraint>
-        <sch:rule context="mei:*[@place eq 'between']">
-          <sch:assert test="count(tokenize(normalize-space(string(@staff)), '\s+')) = 2">The @staff
-            attribute must contain 2 numerically-adjacent integer values.</sch:assert>
-          <sch:let name="tokenizedStaff" value="tokenize(normalize-space(string(@staff)), '\s+')"/>
-          <sch:let name="maxValue"
-            value="max((number($tokenizedStaff[1]), number($tokenizedStaff[2])))"/>
-          <sch:let name="minValue"
-            value="min((number($tokenizedStaff[1]), number($tokenizedStaff[2])))"/>
-          <sch:assert test="$maxValue - $minValue = 1">Staves <sch:value-of select="$minValue"/> and
-            <sch:value-of select="$maxValue"/> are not adjacent.</sch:assert>
-        </sch:rule>
-      </constraint>
+      <constraint> <sch:rule context="mei:*[@place eq 'between']"> <sch:assert test="count(tokenize(normalize-space(string(@staff)), '\s+')) = 2">The @staff attribute must contain 2 numerically-adjacent integer values.</sch:assert> <sch:let name="tokenizedStaff" value="tokenize(normalize-space(string(@staff)), '\s+')"/> <sch:let name="maxValue" value="max((number($tokenizedStaff[1]), number($tokenizedStaff[2])))"/> <sch:let name="minValue" value="min((number($tokenizedStaff[1]), number($tokenizedStaff[2])))"/> <sch:assert test="$maxValue - $minValue = 1">Staves <sch:value-of select="$minValue"/> and <sch:value-of select="$maxValue"/> are not adjacent.</sch:assert> </sch:rule> </constraint>
     </constraintSpec>
   </macroSpec>
   <macroSpec ident="data.STAFFREL.basic" module="MEI" type="dt">
@@ -3703,23 +3558,19 @@
           <desc xml:lang="en">Struck through by '/' (forward slash).</desc>
         </valItem>
         <valItem ident="line-through">
-          <desc xml:lang="en">Struck through by '-'; may be qualified to indicate multiple parallel lines, <abbr>e.g.</abbr>,
-            line-through(2).</desc>
+          <desc xml:lang="en">Struck through by '-'; may be qualified to indicate multiple parallel lines, <abbr>e.g.</abbr>, line-through(2).</desc>
         </valItem>
         <valItem ident="none">
           <desc xml:lang="en">Not rendered, invisible.</desc>
         </valItem>
         <valItem ident="overline">
-          <desc xml:lang="en">Line above the text; may be qualified to indicate multiple parallel lines, <abbr>e.g.</abbr>,
-            overline(3).</desc>
+          <desc xml:lang="en">Line above the text; may be qualified to indicate multiple parallel lines, <abbr>e.g.</abbr>, overline(3).</desc>
         </valItem>
         <valItem ident="overstrike">
-          <desc xml:lang="en">Use for deleted text fully or partially obscured by other text (such as 'XXXXX') or
-            musical symbols (such as notes, rests, etc.).</desc>
+          <desc xml:lang="en">Use for deleted text fully or partially obscured by other text (such as 'XXXXX') or musical symbols (such as notes, rests, etc.).</desc>
         </valItem>
         <valItem ident="strike">
-          <desc xml:lang="en">Struck through by '-'; equivalent to line-through; may be qualified to indicate
-            multiple parallel lines, <abbr>e.g.</abbr>, strike(3).</desc>
+          <desc xml:lang="en">Struck through by '-'; equivalent to line-through; may be qualified to indicate multiple parallel lines, <abbr>e.g.</abbr>, strike(3).</desc>
         </valItem>
         <valItem ident="sub">
           <desc xml:lang="en">Subscript.</desc>
@@ -3728,16 +3579,13 @@
           <desc xml:lang="en">Superscript.</desc>
         </valItem>
         <valItem ident="superimpose">
-          <desc xml:lang="en">Use for added text or musical symbols that fully or partially obscure text from an
-            earlier writing stage.</desc>
+          <desc xml:lang="en">Use for added text or musical symbols that fully or partially obscure text from an earlier writing stage.</desc>
         </valItem>
         <valItem ident="underline">
-          <desc xml:lang="en">Underlined; may be qualified to indicate multiple parallel lines, <abbr>e.g.</abbr>,
-            underline(2).</desc>
+          <desc xml:lang="en">Underlined; may be qualified to indicate multiple parallel lines, <abbr>e.g.</abbr>, underline(2).</desc>
         </valItem>
         <valItem ident="x-through">
-          <desc xml:lang="en">Crossed-out; equivalent to 'bslash' (\) plus 'fslash' (/); that is, a hand-written
-            'X'; may be qualified to indicate multiple parallel lines, <abbr>e.g.</abbr>, x-through(2).</desc>
+          <desc xml:lang="en">Crossed-out; equivalent to 'bslash' (\) plus 'fslash' (/); that is, a hand-written 'X'; may be qualified to indicate multiple parallel lines, <abbr>e.g.</abbr>, x-through(2).</desc>
         </valItem>
         <valItem ident="ltr">
           <desc xml:lang="en">Left-to-right (BIDI embed).</desc>
@@ -3758,8 +3606,7 @@
     <desc xml:lang="en">Parameterized text rendition values.</desc>
     <content>
       <rng:data type="string">
-        <rng:param name="pattern"
-          >(underline|overline|line-through|strike|x-through)\(\d+\)</rng:param>
+        <rng:param name="pattern">(underline|overline|line-through|strike|x-through)\(\d+\)</rng:param>
       </rng:data>
     </content>
   </macroSpec>
@@ -3781,8 +3628,7 @@
     </content>
   </macroSpec>
   <macroSpec ident="data.TSTAMPOFFSET" module="MEI" type="dt">
-    <desc xml:lang="en">A positive or negative offset from the value given in the tstamp attribute in terms of
-      musical time, <abbr>i.e.</abbr>, beats[.fractional beat part].</desc>
+    <desc xml:lang="en">A positive or negative offset from the value given in the tstamp attribute in terms of musical time, <abbr>i.e.</abbr>, beats[.fractional beat part].</desc>
     <content>
       <rng:data type="decimal"/>
     </content>
@@ -3855,8 +3701,7 @@
     </content>
   </macroSpec>
   <macroSpec ident="data.WORD" module="MEI" type="dt">
-    <desc xml:lang="en">A single "word" that contains only letters, digits, punctuation characters, or symbols. It
-      cannot contain whitespace.</desc>
+    <desc xml:lang="en">A single "word" that contains only letters, digits, punctuation characters, or symbols. It cannot contain whitespace.</desc>
     <content>
       <rng:data type="token">
         <rng:param name="pattern">(\p{L}|\p{N}|\p{P}|\p{S})*</rng:param>
@@ -3867,25 +3712,18 @@
     <desc xml:lang="en">Attributes that provide for classification of notation.</desc>
     <attList>
       <attDef ident="notationtype" usage="opt">
-        <desc xml:lang="en">Contains classification of the notation contained or described by the element bearing
-          this attribute.</desc>
+        <desc xml:lang="en">Contains classification of the notation contained or described by the element bearing this attribute.</desc>
         <datatype>
           <rng:ref name="data.NOTATIONTYPE"/>
         </datatype>
       </attDef>
       <attDef ident="notationsubtype" usage="opt">
-        <desc xml:lang="en">Provides any sub-classification of the notation contained or described by the element,
-          additional to that given by its notationtype attribute.</desc>
+        <desc xml:lang="en">Provides any sub-classification of the notation contained or described by the element, additional to that given by its notationtype attribute.</desc>
         <datatype>
           <rng:data type="NMTOKEN"/>
         </datatype>
         <constraintSpec ident="When_notationsubtype" scheme="schematron">
-          <constraint>
-            <sch:rule context="mei:*[@notationsubtype]">
-              <sch:assert test="@notationtype">An element with a notationsubtype attribute must have
-                a notationtype attribute.</sch:assert>
-            </sch:rule>
-          </constraint>
+          <constraint> <sch:rule context="mei:*[@notationsubtype]"> <sch:assert test="@notationtype">An element with a notationsubtype attribute must have a notationtype attribute.</sch:assert> </sch:rule> </constraint>
         </constraintSpec>
       </attDef>
     </attList>

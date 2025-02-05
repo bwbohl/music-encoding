@@ -19,9 +19,7 @@
 -->
 <?xml-model href="../validation/mei_odds.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <?xml-model href="../validation/mei_odds.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<?xml-model href="../validation/mei-purify.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<specGrp xmlns="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0"
-         xmlns:sch="http://purl.oclc.org/dsdl/schematron" xml:id="module.MEI.stringtab">
+<?xml-model href="../validation/mei-purify.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><specGrp xmlns="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xml:id="module.MEI.stringtab">
   <moduleSpec ident="MEI.stringtab">
     <desc xml:lang="en">Tablature component declarations.</desc>
   </moduleSpec>
@@ -82,8 +80,7 @@
         </datatype>
       </attDef>
       <attDef ident="tab.anchorline" usage="opt">
-        <desc xml:lang="en">Used in German lute tablature where the vertical alignment of tab notes is consistent but cannot be identified using a typical value of <att>tab.align</att> (<abbr>i.e.</abbr>, <val>top</val> or <val>bottom</val>). Specifies the horizontal strand corresponding to the <att>lines</att> attribute on <gi scheme="MEI">staffDef</gi> that anchors the vertical position of tab notes. This anchorline is used as the vertical starting position when stacking tab notes into chords. Single tab notes simply occupy this position. Chords <q>grow upwards</q> from this position. If the chord extends further than the number of available horizontal strands (<q>lines</q>) above the anchorline, the entire chord is shifted downward until its top tab note is positioned on the top-most line. (Note that in German lute tablature, the lines are conceptual rather than visible).
-        </desc>
+        <desc xml:lang="en">Used in German lute tablature where the vertical alignment of tab notes is consistent but cannot be identified using a typical value of <att>tab.align</att> (<abbr>i.e.</abbr>, <val>top</val> or <val>bottom</val>). Specifies the horizontal strand corresponding to the <att>lines</att> attribute on <gi scheme="MEI">staffDef</gi> that anchors the vertical position of tab notes. This anchorline is used as the vertical starting position when stacking tab notes into chords. Single tab notes simply occupy this position. Chords <q>grow upwards</q> from this position. If the chord extends further than the number of available horizontal strands (<q>lines</q>) above the anchorline, the entire chord is shifted downward until its top tab note is positioned on the top-most line. (Note that in German lute tablature, the lines are conceptual rather than visible). </desc>
         <datatype>
           <rng:ref name="data.CLEFLINE"/>
         </datatype>
@@ -140,14 +137,12 @@
     <desc xml:lang="en">This collection of attributes is deprecated in favor of the new <gi scheme="MEI">tuning</gi> element and will be removed in a future version. String tablature tuning information.</desc>
     <attList>
       <attDef ident="tab.strings" usage="opt">
-        <desc xml:lang="en">This attribute is deprecated in favor of the new <gi scheme="MEI">tuning</gi> element and will be removed in a future version. Provides a *written* pitch and octave for each open string or course of
-          strings.</desc>
+        <desc xml:lang="en">This attribute is deprecated in favor of the new <gi scheme="MEI">tuning</gi> element and will be removed in a future version. Provides a *written* pitch and octave for each open string or course of strings.</desc>
         <datatype>
           <rng:list>
             <rng:oneOrMore>
               <rng:data type="token">
-                <rng:param name="pattern">
-                  [a-g][0-9](s|f|ss|x|ff|xs|sx|ts|tf|n|nf|ns|su|sd|fu|fd|nu|nd|1qf|3qf|1qs|3qs)?([a-g][0-9](s|f|ss|x|ff|xs|sx|ts|tf|n|nf|ns|su|sd|fu|fd|nu|nd|1qf|3qf|1qs|3qs)?)*</rng:param>
+                <rng:param name="pattern"> [a-g][0-9](s|f|ss|x|ff|xs|sx|ts|tf|n|nf|ns|su|sd|fu|fd|nu|nd|1qf|3qf|1qs|3qs)?([a-g][0-9](s|f|ss|x|ff|xs|sx|ts|tf|n|nf|ns|su|sd|fu|fd|nu|nd|1qf|3qf|1qs|3qs)?)*</rng:param>
               </rng:data>
             </rng:oneOrMore>
           </rng:list>
@@ -159,8 +154,7 @@
           <rng:list>
             <rng:oneOrMore>
               <rng:data type="token">
-                <rng:param name="pattern">
-                  [a-g][0-9](s|f|ss|x|ff|xs|sx|ts|tf|n|nf|ns|su|sd|fu|fd|nu|nd|1qf|3qf|1qs|3qs)?([a-g][0-9](s|f|ss|x|ff|xs|sx|ts|tf|n|nf|ns|su|sd|fu|fd|nu|nd|1qf|3qf|1qs|3qs)?)*</rng:param>
+                <rng:param name="pattern"> [a-g][0-9](s|f|ss|x|ff|xs|sx|ts|tf|n|nf|ns|su|sd|fu|fd|nu|nd|1qf|3qf|1qs|3qs)?([a-g][0-9](s|f|ss|x|ff|xs|sx|ts|tf|n|nf|ns|su|sd|fu|fd|nu|nd|1qf|3qf|1qs|3qs)?)*</rng:param>
               </rng:data>
             </rng:oneOrMore>
           </rng:list>
@@ -207,10 +201,7 @@
       </attDef>
     </attList>
     <remarks xml:lang="en">
-      <p>The <att>startid</att> and <att>endid</att> attributes are used to indicate the <gi
-          scheme="MEI">chordMember</gi> elements on which the barre starts and finishes
-        respectively. The fret at which the barre should be created is recorded by the <att>fret</att>
-        attribute.</p>
+      <p>The <att>startid</att> and <att>endid</att> attributes are used to indicate the <gi scheme="MEI">chordMember</gi> elements on which the barre starts and finishes respectively. The fret at which the barre should be created is recorded by the <att>fret</att> attribute.</p>
     </remarks>
   </elementSpec>
   <elementSpec ident="course" module="MEI.stringtab">

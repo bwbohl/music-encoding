@@ -19,9 +19,7 @@
 -->
 <?xml-model href="../validation/mei_odds.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <?xml-model href="../validation/mei_odds.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<?xml-model href="../validation/mei-purify.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<specGrp xmlns="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0"
-  xmlns:sch="http://purl.oclc.org/dsdl/schematron" xml:id="module.MEI.drama">
+<?xml-model href="../validation/mei-purify.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><specGrp xmlns="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xml:id="module.MEI.drama">
   <moduleSpec ident="MEI.drama">
     <desc xml:lang="en">Dramatic text component declarations.</desc>
   </moduleSpec>
@@ -101,37 +99,19 @@
       </rng:zeroOrMore>
     </content>
     <constraintSpec ident="sp_start-type_attributes_required" scheme="schematron">
-      <constraint>
-        <sch:rule
-          context="mei:sp[ancestor::mei:layer or ancestor::mei:measure or ancestor::mei:staff][not(ancestor::mei:sp)]">
-          <sch:assert test="@startid or @tstamp or @tstamp.ges or @tstamp.real">Must have one of the
-            attributes: startid, tstamp, tstamp.ges or tstamp.real.</sch:assert>
-        </sch:rule>
-      </constraint>
+      <constraint> <sch:rule context="mei:sp[ancestor::mei:layer or ancestor::mei:measure or ancestor::mei:staff][not(ancestor::mei:sp)]"> <sch:assert test="@startid or @tstamp or @tstamp.ges or @tstamp.real">Must have one of the attributes: startid, tstamp, tstamp.ges or tstamp.real.</sch:assert> </sch:rule> </constraint>
     </constraintSpec>
     <constraintSpec ident="sp_start-type_attributes_forbidden" scheme="schematron">
-      <constraint>
-        <sch:rule
-          context="mei:sp[not(ancestor::mei:layer or ancestor::mei:measure or ancestor::mei:staff)]">
-          <sch:assert
-            test="not(@startid or @endid or @tstamp or @tstamp2 or @tstamp.ges or @tstamp.real or                @startho or @endho or @to or @startto or @endto or @staff or @layer or @place or @plist)"
-            >Must not have any of the attributes: startid, endid, tstamp, tstamp2, tstamp.ges,
-            tstamp.real, startho, endho, to, startto, endto, staff, layer, place, or
-            plist.</sch:assert>
-        </sch:rule>
-      </constraint>
+      <constraint> <sch:rule context="mei:sp[not(ancestor::mei:layer or ancestor::mei:measure or ancestor::mei:staff)]"> <sch:assert test="not(@startid or @endid or @tstamp or @tstamp2 or @tstamp.ges or @tstamp.real or                @startho or @endho or @to or @startto or @endto or @staff or @layer or @place or @plist)">Must not have any of the attributes: startid, endid, tstamp, tstamp2, tstamp.ges, tstamp.real, startho, endho, to, startto, endto, staff, layer, place, or plist.</sch:assert> </sch:rule> </constraint>
     </constraintSpec>
     <remarks xml:lang="en">
-      <p>In a musical context <gi scheme="MEI">sp</gi> must have a start-type attribute when it's
-        not a descendant of <gi scheme="MEI">sp</gi>. In a textual content <gi scheme="MEI">sp</gi>
-        must NOT have any musical attributes.</p>
+      <p>In a musical context <gi scheme="MEI">sp</gi> must have a start-type attribute when it's not a descendant of <gi scheme="MEI">sp</gi>. In a textual content <gi scheme="MEI">sp</gi> must NOT have any musical attributes.</p>
       <p>The model of this element is based on the <ref target="https://tei-c.org/release/doc/tei-p5-doc/en/html/ref-sp.html">sp</ref> element of the Text Encoding Initiative (TEI).</p>
     </remarks>
   </elementSpec>
   <elementSpec ident="stageDir" module="MEI.drama">
     <gloss xml:lang="en">stage direction</gloss>
-    <desc xml:lang="en">Contains any kind of stage direction within a dramatic text or
-      fragment.</desc>
+    <desc xml:lang="en">Contains any kind of stage direction within a dramatic text or fragment.</desc>
     <classes>
       <memberOf key="att.common"/>
       <memberOf key="att.facsimile"/>
@@ -154,30 +134,13 @@
       </rng:zeroOrMore>
     </content>
     <constraintSpec ident="stageDir_start-type_attributes_required" scheme="schematron">
-      <constraint>
-        <sch:rule
-          context="mei:stageDir[ancestor::mei:layer or ancestor::mei:measure or ancestor::mei:staff][not(ancestor::mei:sp)]">
-          <sch:assert test="@startid or @tstamp or @tstamp.ges or @tstamp.real">Must have one of the
-            attributes: startid, tstamp, tstamp.ges or tstamp.real.</sch:assert>
-        </sch:rule>
-      </constraint>
+      <constraint> <sch:rule context="mei:stageDir[ancestor::mei:layer or ancestor::mei:measure or ancestor::mei:staff][not(ancestor::mei:sp)]"> <sch:assert test="@startid or @tstamp or @tstamp.ges or @tstamp.real">Must have one of the attributes: startid, tstamp, tstamp.ges or tstamp.real.</sch:assert> </sch:rule> </constraint>
     </constraintSpec>
     <constraintSpec ident="stageDir_start-type_attributes_forbidden" scheme="schematron">
-      <constraint>
-        <sch:rule
-          context="mei:stageDir[not(ancestor::mei:layer or ancestor::mei:measure or ancestor::mei:staff) or ancestor::mei:sp]">
-          <sch:assert
-            test="not(@startid or @endid or @tstamp or @tstamp2 or @tstamp.ges or @tstamp.real or @startho or @endho or @to or                @startto or @endto or @staff or @layer or @place or @plist)"
-            >Must not have any of the attributes: startid, endid, tstamp, tstamp2, tstamp.ges,
-            tstamp.real, startho, endho, to, startto, endto, staff, layer, place, or
-            plist.</sch:assert>
-        </sch:rule>
-      </constraint>
+      <constraint> <sch:rule context="mei:stageDir[not(ancestor::mei:layer or ancestor::mei:measure or ancestor::mei:staff) or ancestor::mei:sp]"> <sch:assert test="not(@startid or @endid or @tstamp or @tstamp2 or @tstamp.ges or @tstamp.real or @startho or @endho or @to or                @startto or @endto or @staff or @layer or @place or @plist)">Must not have any of the attributes: startid, endid, tstamp, tstamp2, tstamp.ges, tstamp.real, startho, endho, to, startto, endto, staff, layer, place, or plist.</sch:assert> </sch:rule> </constraint>
     </constraintSpec>
     <remarks xml:lang="en">
-      <p>In a musical context <gi scheme="MEI">stageDir</gi> must have a start-type attribute when
-        it’s not a descendant of <gi scheme="MEI">sp</gi>. In a textual content <gi scheme="MEI"
-          >stageDir</gi> must NOT have any musical attributes.</p>
+      <p>In a musical context <gi scheme="MEI">stageDir</gi> must have a start-type attribute when it’s not a descendant of <gi scheme="MEI">sp</gi>. In a textual content <gi scheme="MEI">stageDir</gi> must NOT have any musical attributes.</p>
       <p>The model of this element is based on the <ref target="https://tei-c.org/release/doc/tei-p5-doc/en/html/ref-stage.html">stage</ref> element of the Text Encoding Initiative (TEI).</p>
     </remarks>
   </elementSpec>

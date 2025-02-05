@@ -19,9 +19,7 @@
 -->
 <?xml-model href="../validation/mei_odds.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <?xml-model href="../validation/mei_odds.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<?xml-model href="../validation/mei-purify.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<specGrp xmlns="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0"
-  xmlns:sch="http://purl.oclc.org/dsdl/schematron" xml:id="module.MEI.fingering">
+<?xml-model href="../validation/mei-purify.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><specGrp xmlns="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xml:id="module.MEI.fingering">
   <moduleSpec ident="MEI.fingering">
     <desc xml:lang="en">Fingering component declarations.</desc>
   </moduleSpec>
@@ -59,8 +57,7 @@
     </attList>
   </classSpec>
   <classSpec ident="model.fingeringLike" module="MEI.fingering" type="model">
-    <desc xml:lang="en">Groups elements that capture performance instructions regarding the use of the fingers of
-      the hand (or a subset of them).</desc>
+    <desc xml:lang="en">Groups elements that capture performance instructions regarding the use of the fingers of the hand (or a subset of them).</desc>
     <classes>
       <memberOf key="model.controlEventLike"/>
     </classes>
@@ -88,21 +85,11 @@
       </rng:zeroOrMore>
     </content>
     <constraintSpec ident="fing_start-type_attributes_required" scheme="schematron">
-      <constraint>
-        <sch:rule context="mei:fing[not(ancestor::mei:fingGrp)]">
-          <sch:assert test="@startid or @tstamp or @tstamp.ges or @tstamp.real">Must have one of the
-            attributes: startid, tstamp, tstamp.ges or tstamp.real.</sch:assert>
-        </sch:rule>
-      </constraint>
+      <constraint> <sch:rule context="mei:fing[not(ancestor::mei:fingGrp)]"> <sch:assert test="@startid or @tstamp or @tstamp.ges or @tstamp.real">Must have one of the attributes: startid, tstamp, tstamp.ges or tstamp.real.</sch:assert> </sch:rule> </constraint>
     </constraintSpec>
     <constraintSpec ident="stack_exclusion" scheme="schematron">
       <!-- Exclusion implemented using Schematron -->
-      <constraint>
-        <sch:rule context="mei:fing">
-          <sch:assert test="not(descendant::mei:stack)">The stack element is not allowed as a
-            descendant of fing.</sch:assert>
-        </sch:rule>
-      </constraint>
+      <constraint> <sch:rule context="mei:fing"> <sch:assert test="not(descendant::mei:stack)">The stack element is not allowed as a descendant of fing.</sch:assert> </sch:rule> </constraint>
     </constraintSpec>
   </elementSpec>
   <elementSpec ident="fingGrp" module="MEI.fingering">
@@ -127,28 +114,11 @@
       </rng:zeroOrMore>
     </content>
     <constraintSpec ident="require_fingeringLike_children" scheme="schematron">
-      <constraint>
-        <sch:rule context="mei:fingGrp">
-          <sch:assert test="count(mei:fing) + count(mei:fingGrp) &gt; 1">At least 2 fing or fingGrp
-            elements are required.</sch:assert>
-        </sch:rule>
-      </constraint>
+      <constraint> <sch:rule context="mei:fingGrp"> <sch:assert test="count(mei:fing) + count(mei:fingGrp) &gt; 1">At least 2 fing or fingGrp elements are required.</sch:assert> </sch:rule> </constraint>
     </constraintSpec>
     <constraintSpec ident="check_fingGrp_start-type_attributes" scheme="schematron">
       <constraint>
-        <sch:pattern>
-          <sch:rule context="mei:fingGrp[not(ancestor::mei:fingGrp)][@tstamp or @startid]">
-            <sch:assert test="not(child::mei:*[@tstamp or @startid])">When @tstamp or @startid is
-              present on fingGrp, its child elements cannot have a @tstamp or @startid
-              attribute.</sch:assert>
-          </sch:rule>
-          <sch:rule context="mei:fingGrp[not(ancestor::mei:fingGrp)][not(@tstamp or @startid)]">
-            <sch:assert
-              test="count(descendant::mei:*[@tstamp or @startid]) = count(child::mei:*[local-name()='fing' or local-name()='fingGrp'])"
-              >When @tstamp or @startid is not present on fingGrp, each of its child elements must
-              have a @tstamp or @startid attribute.</sch:assert>
-          </sch:rule>
-        </sch:pattern>
+        <sch:pattern> <sch:rule context="mei:fingGrp[not(ancestor::mei:fingGrp)][@tstamp or @startid]"> <sch:assert test="not(child::mei:*[@tstamp or @startid])">When @tstamp or @startid is present on fingGrp, its child elements cannot have a @tstamp or @startid attribute.</sch:assert> </sch:rule> <sch:rule context="mei:fingGrp[not(ancestor::mei:fingGrp)][not(@tstamp or @startid)]"> <sch:assert test="count(descendant::mei:*[@tstamp or @startid]) = count(child::mei:*[local-name()='fing' or local-name()='fingGrp'])">When @tstamp or @startid is not present on fingGrp, each of its child elements must have a @tstamp or @startid attribute.</sch:assert> </sch:rule> </sch:pattern>
       </constraint>
     </constraintSpec>
   </elementSpec>
