@@ -132,6 +132,11 @@
                         ns="http://www.music-encoding.org/ns/mei"
                         start="mei"
                         defaultExceptions="http://www.music-encoding.org/ns/mei http://www.w3.org/2000/svg">
+
+              <constraintDecl scheme="schematron" queryBinding="xpath3">
+                <sch:ns prefix="sch" uri="http://purl.oclc.org/dsdl/schematron"/>
+              </constraintDecl>
+
                <xi:include href="modules/MEI.xml"/>
                <xi:include href="modules/MEI.analytical.xml"/>
                <xi:include href="modules/MEI.cmn.xml"/>
