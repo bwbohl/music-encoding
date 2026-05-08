@@ -18,6 +18,10 @@
     fill: #999999;
 }
 
+.attribute:before {
+    content: '@';
+}
+
 .block {
     display: block;
 }
