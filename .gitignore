@@ -16,3 +16,7 @@ Thumbs.db
 
 # Python
 .venv
+
+# ideas folder — contents are local only
+ideas/*
+!ideas/README.md
