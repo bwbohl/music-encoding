@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../../dist/schemata/mei-all_anyStart.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="../../dist/schemata/mei-all_anyStart.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<mei xmlns="http://www.music-encoding.org/ns/mei">
+    <meiHead meiversion="5.1-dev+anyStart">
+        <altId></altId>
+    </meiHead>
+    <music>
+        <body>
+            <mdiv>
+                <score>
+                    <scoreDef>
+                        
+                        <meterSigGrp>
+                            <meterSigGrp/>
+                            <meterSig/>
+                            <meterSig/>
+                        </meterSigGrp>
+                    </scoreDef>
+                    <scoreDef>
+                        
+                        <meterSigGrp>
+                            <meterSigGrp>
+                                <meterSigGrp>
+                                    <meterSig/>
+                                    <meterSig/>
+                                </meterSigGrp>
+                            </meterSigGrp>
+                        </meterSigGrp>
+                    </scoreDef>
+                    <scoreDef>
+                        <meterSigGrp>
+                            <meterSig/>
+                            <meterSigGrp/>
+                        </meterSigGrp>
+                    </scoreDef>
+                    <scoreDef>
+                        <meterSigGrp> </meterSigGrp>
+                    </scoreDef>
+                </score>
+            </mdiv>
+        </body>
+    </music>
+</mei>
