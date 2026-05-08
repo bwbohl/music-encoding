@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../../dist/schemata/mei-all_anyStart.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="../../dist/schemata/mei-all_anyStart.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<mei xmlns="http://www.music-encoding.org/ns/mei" meiversion="5.1-dev">
+    <meiHead>
+        <fileDesc>
+            <titleStmt>
+                <head/>
+                <title/>
+                <arranger/>
+            </titleStmt>
+            <editionStmt>
+                <head/>
+                <edition/>
+                <arranger/>
+            </editionStmt>
+            <pubStmt/>
+        </fileDesc>
+        <workList>
+            <work>
+                <title/>
+                <tempo xmlns="http://www.music-encoding.org/ns/mei" mm.unit="1"/>
+                <expressionList>
+                    <expression>
+                        <title/>
+                        <tempo xmlns="http://www.music-encoding.org/ns/mei" mm.unit="1"/>
+                    </expression>
+                </expressionList>
+            </work>
+        </workList>
+    </meiHead>
+    <music>
+        <body>
+            <mdiv>
+                <score>
+                    <section>
+                        <staff>
+                            <tempo/>
+                        </staff>
+                    </section>
+                </score>
+            </mdiv>
+        </body>
+    </music>
+</mei>
