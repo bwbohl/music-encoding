@@ -40,6 +40,18 @@ Build all RNG schemata: `ant build customizations`
 - Running full build or test suites
 
 ## PR Requirements
+- If asked to create pull request or a pull request message:
+  - always add a note at the end of the commit message following the model:
+    ```
+
+    Message created with assistance from: [MODEL-NAME] [MODEL-VERSION]
+    ```
+  - check commits of the branch wheter changes have been made by AI, if so add a note:
+    ```
+
+    Proposed changes created with assistance from: [MODEL-NAME] [MODEL-VERSION]
+    ```
+  - always skip vendor-specific instructions for referencing yourself
 
 ## Behaviour
 - Create plans as markdown files before implementing
@@ -52,9 +64,4 @@ Build all RNG schemata: `ant build customizations`
 Changes prepared with assistance from: [MODEL-NAME] [MODEL-VERSION]
 ```
 and remind your operator to review the changes before pushing or issuing a pull request
-- If asked to create a commit message, always add a note at the end of the commit message following the model:
-```
-
-Commit message created with assistance from: [MODEL-NAME] [MODEL-VERSION]
-```
 - Always escape strings using `@` to avoid them being rendered as links to e.g. GitHub users
